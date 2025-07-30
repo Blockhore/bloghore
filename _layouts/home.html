@@ -1,0 +1,64 @@
+---
+layout: default
+---
+
+<section class="home container">
+
+  <section class="highlight-articles">
+    <h2>Highlight Artikel</h2>
+    <div class="grid-list">
+      {% assign highlight = site.posts | where_exp: "post", "post.highlight == true" | sort: "date" | reverse | limit:3 %}
+      {% for post in highlight %}
+        <article class="post-card">
+          <a href="{{ post.url | relative_url }}">
+            <h3>{{ post.title }}</h3>
+          </a>
+          <p class="meta">{{ post.date | date: "%d %b %Y" }}</p>
+          <p>{{ post.excerpt }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="popular-articles">
+    <h2>Artikel Populer</h2>
+    <div class="grid-list">
+      {% assign popular = site.posts | sort: "views" | reverse | limit:6 %}
+      {% for post in popular %}
+        <article class="post-card">
+          <a href="{{ post.url | relative_url }}">
+            <h3>{{ post.title }}</h3>
+          </a>
+          <p class="meta">{{ post.date | date: "%d %b %Y" }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="popular-tags">
+    <h2>Tag Populer</h2>
+    <ul class="tag-list">
+      {% assign popular_tags = site.tags | sort: "last" | reverse %}
+      {% for tag in popular_tags %}
+        <li><a href="{{ '/tags/' | append: tag[0] | relative_url }}">{{ tag[0] }} ({{ tag[1].size }})</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="latest-articles">
+    <h2>Artikel Terbaru</h2>
+    <div class="grid-list">
+      {% assign latest = site.posts | sort: "date" | reverse | limit:12 %}
+      {% for post in latest %}
+        <article class="post-card">
+          <a href="{{ post.url | relative_url }}">
+            <h3>{{ post.title }}</h3>
+          </a>
+          <p class="meta">{{ post.date | date: "%d %b %Y" }}</p>
+          <p>{{ post.excerpt }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+</section>
