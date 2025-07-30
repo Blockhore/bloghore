@@ -1,0 +1,43 @@
+title: Bloghore
+description: Web edukasi dan blog seputar blockchain, crypto, dan web3
+baseurl: "" # root domain
+url: ""     # ganti jika sudah ada domain
+
+permalink: /:title/
+
+markdown: kramdown
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-polyglot
+  - jekyll-archives
+  - jekyll-admin
+
+paginate: 6
+paginate_path: "/page:num"
+
+languages: ["id", "en"]
+default_lang: "id"
+
+collections:
+  posts:
+    output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+theme: minima
