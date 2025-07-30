@@ -1,0 +1,68 @@
+---
+layout: default
+---
+
+<article class="post-detail container">
+  {% if page.image %}
+    <div class="post-header-image">
+      <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+    </div>
+  {% endif %}
+
+  <header class="post-header">
+    <h1>{{ page.title }}</h1>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %b %Y" }}</time> •
+      {% if page.author %}{{ page.author }} • {% endif %}
+      {% assign words = page.content | number_of_words %}
+      {% assign minutes = words | divided_by:200 | ceil %}
+      {{ minutes }} menit baca
+    </p>
+
+    <p class="post-cats-tags">
+      {% if page.category %}
+        Kategori: <a href="{{ '/kategori/' | append: page.category | relative_url }}">{{ page.category }}</a>
+      {% endif %}
+      {% if page.tags %}
+        <br>Tags:
+        {% for tag in page.tags %}
+          <span class="tag">{{ tag }}</span>{% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+      {% endif %}
+    </p>
+  </header>
+
+  <section class="post-content">
+    {{ content }}
+  </section>
+
+  <section class="post-share">
+    <p>Bagikan:</p>
+    <a href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url }}&text={{ page.title }}" target="_blank">Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}" target="_blank">Facebook</a>
+    <a href="https://t.me/share/url?url={{ page.url | absolute_url }}&text={{ page.title }}" target="_blank">Telegram</a>
+  </section>
+
+  <nav class="post-nav">
+    {% if page.previous %}
+      <a href="{{ page.previous.url | relative_url }}" class="prev-post">← {{ page.previous.title }}</a>
+    {% endif %}
+    {% if page.next %}
+      <a href="{{ page.next.url | relative_url }}" class="next-post">{{ page.next.title }} →</a>
+    {% endif %}
+  </nav>
+
+  <section class="related-posts">
+    <h2>Artikel Terkait</h2>
+    <ul>
+      {% assign related_posts = site.posts | where_exp: "post", "post.tags & page.tags" %}
+      {% for post in related_posts limit:3 %}
+        {% unless post.url == page.url %}
+          <li>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </li>
+        {% endunless %}
+      {% endfor %}
+    </ul>
+  </section>
+</article>
