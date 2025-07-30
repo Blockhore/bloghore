@@ -25,6 +25,10 @@ default_lang: "id"
 collections:
   posts:
     output: true
+collections:
+  authors:
+    output: true
+    permalink: /authors/:name/
 
 defaults:
   -
