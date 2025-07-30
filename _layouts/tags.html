@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<section class="tag-detail container">
+  {% assign tag = page.title %}
+  {% assign posts_with_tag = site.tags[tag] %}
+  
+  <h1>Tag: {{ tag }}</h1>
+
+  {% if posts_with_tag %}
+    <p class="tag-count">Total {{ posts_with_tag | size }} artikel dengan tag ini.</p>
+    <div class="grid-list">
+      {% for post in posts_with_tag %}
+        <article class="post-card">
+          <a href="{{ post.url | relative_url }}">
+            <h2>{{ post.title }}</h2>
+          </a>
+          <p class="meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
+            {% if post.category %}
+              • Kategori: {{ post.category }}
+            {% endif %}
+          </p>
+          <p>{{ post.excerpt }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>Belum ada artikel dengan tag ini.</p>
+  {% endif %}
+</section>
