@@ -1,0 +1,42 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+
+    <div class="footer-brand">
+      {% include logo.html %}
+      <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+    </div>
+
+    <div class="footer-nav">
+      <h4>Navigasi</h4>
+      <ul>
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a href="{{ '/category/' | relative_url }}">Category</a></li>
+        <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+        <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+        <li><a href="{{ '/author/' | relative_url }}">Author</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-categories">
+      <h4>Kategori</h4>
+      <ul>
+        {% assign all_categories = site.categories | sort %}
+        {% for category in all_categories limit:6 %}
+          <li>
+            <a href="{{ '/category/' | append: category[0] | relative_url }}">{{ category[0] }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <ul class="social-links">
+        <li><a href="https://twitter.com/bloghore" target="_blank">Twitter</a></li>
+        <li><a href="https://t.me/bloghore" target="_blank">Telegram</a></li>
+        <li><a href="https://github.com/bloghore" target="_blank">GitHub</a></li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
