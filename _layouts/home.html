@@ -13,7 +13,9 @@ layout: default
           <a href="{{ post.url | relative_url }}">
             <h3>{{ post.title }}</h3>
           </a>
-          <p class="meta">{{ post.date | date: "%d %b %Y" }}</p>
+          <p class="meta">
+            {% include date.html date=post.date %}
+          </p>
           <p>{{ post.excerpt }}</p>
         </article>
       {% endfor %}
@@ -29,7 +31,9 @@ layout: default
           <a href="{{ post.url | relative_url }}">
             <h3>{{ post.title }}</h3>
           </a>
-          <p class="meta">{{ post.date | date: "%d %b %Y" }}</p>
+          <p class="meta">
+            {% include date.html date=post.date %}
+          </p>
         </article>
       {% endfor %}
     </div>
@@ -54,7 +58,9 @@ layout: default
           <a href="{{ post.url | relative_url }}">
             <h3>{{ post.title }}</h3>
           </a>
-          <p class="meta">{{ post.date | date: "%d %b %Y" }}</p>
+          <p class="meta">
+            {% include date.html date=post.date %}
+          </p>
           <p>{{ post.excerpt }}</p>
         </article>
       {% endfor %}
