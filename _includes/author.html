@@ -1,0 +1,19 @@
+{% assign author_id = page.author %}
+{% assign author = site.data.authors[author_id] %}
+
+{% if author %}
+<div class="author-box">
+  <div class="author-info">
+    {% if author.avatar %}
+      <img class="author-avatar" src="{{ author.avatar | relative_url }}" alt="{{ author.name }}">
+    {% endif %}
+    <div class="author-meta">
+      <h3>{{ author.name }}</h3>
+      {% if author.bio %}
+        <p>{{ author.bio }}</p>
+      {% endif %}
+      <a href="{{ '/author/' | append: author_id | relative_url }}">Lihat profil →</a>
+    </div>
+  </div>
+</div>
+{% endif %}
