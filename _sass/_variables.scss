@@ -1,0 +1,28 @@
+// === Colors ===
+$color-black: #000;
+$color-white: #fff;
+$color-accent: #ffb300;
+
+$color-text: $color-white;
+$color-background: $color-black;
+$color-muted: rgba($color-white, 0.6);
+$color-border: rgba($color-white, 0.1);
+
+// === Typography ===
+$font-main: 'Inter', sans-serif;
+$font-size-base: 1rem;
+$line-height-base: 1.6;
+
+// === Layout ===
+$max-width: 1200px;
+$container-padding: 2rem;
+$section-spacing: 4rem;
+
+// === Radius & Shadow ===
+$radius-base: 0.5rem;
+$shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.4);
+
+// === Z-index ===
+$z-header: 1000;
+$z-overlay: 900;
+$z-base: 1;
