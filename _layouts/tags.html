@@ -17,7 +17,7 @@ layout: default
             <h2>{{ post.title }}</h2>
           </a>
           <p class="meta">
-            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
+            {% include date.html date=post.date %}
             {% if post.category %}
               • Kategori: {{ post.category }}
             {% endif %}
