@@ -1,0 +1,22 @@
+<header class="site-header">
+  <div class="container nav-container">
+    <div class="logo">
+      {% include logo.html %}
+    </div>
+
+    <nav class="main-nav" id="main-nav">
+      <ul class="nav-list">
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a href="{{ '/category/' | relative_url }}">Category</a></li>
+        <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+        <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+        <li><a href="{{ '/author/' | relative_url }}">Author</a></li>
+        <li><a href="https://forms.gle/your-form-id" class="submit-btn">Submit</a></li>
+      </ul>
+    </nav>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      ☰
+    </button>
+  </div>
+</header>
