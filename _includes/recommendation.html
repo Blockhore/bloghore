@@ -1,0 +1,32 @@
+{% assign related_posts = site.posts | where_exp: "post", "post.tags | where: 'nil', false" %}
+{% assign related = "" | split: "" %}
+
+{% for post in related_posts %}
+  {% if post.url != page.url and post.tags %}
+    {% assign intersection = post.tags | intersection: page.tags %}
+    {% if intersection.size > 0 %}
+      {% assign related = related | push: post %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% assign related = related | uniq | slice: 0, 3 %}
+
+{% if related.size > 0 %}
+<section class="recommended-posts">
+  <h2>Rekomendasi untukmu</h2>
+  <div class="grid-list">
+    {% for post in related %}
+      <article class="post-card">
+        <a href="{{ post.url | relative_url }}">
+          <h3>{{ post.title }}</h3>
+        </a>
+        <p class="meta">
+          {% include date.html date=post.date %}
+        </p>
+        <p>{{ post.excerpt }}</p>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
