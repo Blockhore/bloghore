@@ -1,0 +1,23 @@
+<section class="post-share">
+  <h4>Bagikan:</h4>
+  <div class="share-icons">
+    <a href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url }}&text={{ page.title }}" target="_blank" aria-label="Share on Twitter">
+      <i class="icon-twitter"></i>
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}" target="_blank" aria-label="Share on Facebook">
+      <i class="icon-facebook"></i>
+    </a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url }}&title={{ page.title }}" target="_blank" aria-label="Share on LinkedIn">
+      <i class="icon-linkedin"></i>
+    </a>
+    <a href="https://t.me/share/url?url={{ page.url | absolute_url }}&text={{ page.title }}" target="_blank" aria-label="Share on Telegram">
+      <i class="icon-telegram"></i>
+    </a>
+    <a href="https://api.whatsapp.com/send?text={{ page.title }} {{ page.url | absolute_url }}" target="_blank" aria-label="Share on WhatsApp">
+      <i class="icon-whatsapp"></i>
+    </a>
+    <button onclick="navigator.clipboard.writeText('{{ page.url | absolute_url }}')" aria-label="Copy link">
+      <i class="icon-link"></i>
+    </button>
+  </div>
+</section>
