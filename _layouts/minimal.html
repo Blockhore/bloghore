@@ -6,7 +6,9 @@
 <body>
   {% include header.html %}
 
-  {{ content }}
+  <main class="minimal-content container">
+    {{ content }}
+  </main>
 
   {% include footer.html %}
   <script src="{{ '/js/main.js' | relative_url }}"></script>
