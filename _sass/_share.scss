@@ -1,0 +1,46 @@
+// _sass/_share.scss
+
+.post-share {
+  margin: 3rem 0;
+
+  h4 {
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+    color: $color-accent;
+  }
+
+  .share-icons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    a,
+    button {
+      background: rgba($color-white, 0.05);
+      border: none;
+      padding: 0.5rem;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      font-size: 1.25rem;
+      color: $color-white;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        background-color: $color-accent;
+        color: $color-black;
+      }
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    i {
+      pointer-events: none;
+    }
+  }
+}
