@@ -1,0 +1,49 @@
+// _sass/_pagination.scss
+
+.pagination {
+  margin-top: 3rem;
+  text-align: center;
+
+  .pagination-list {
+    display: inline-flex;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+
+    li {
+      a,
+      .current {
+        display: inline-block;
+        padding: 0.5rem 0.75rem;
+        border-radius: $radius-base;
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: background 0.2s ease;
+      }
+
+      a {
+        background-color: rgba($color-white, 0.05);
+        color: $color-white;
+
+        &:hover {
+          background-color: $color-accent;
+          color: $color-black;
+        }
+
+        &.prev,
+        &.next {
+          font-weight: bold;
+        }
+      }
+
+      .current {
+        background-color: $color-accent;
+        color: $color-black;
+        cursor: default;
+      }
+    }
+  }
+}
