@@ -1,0 +1,75 @@
+/* === Navigation Menu === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem $container-padding;
+  background-color: $color-black;
+  color: $color-white;
+  z-index: $z-header;
+  position: relative;
+}
+
+.navbar-logo {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: $color-accent;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 1.5rem;
+
+  a {
+    color: $color-white;
+    font-weight: 500;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: $color-accent;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
+
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: $color-white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* === Responsive === */
+@include media-md {
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    background: $color-black;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+}
