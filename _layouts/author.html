@@ -3,8 +3,7 @@ layout: default
 ---
 
 <section class="author-profile container">
-  {% assign author_id = page.author %}
-  {% assign author = site.data.authors[author_id] %}
+  {% assign author = page %}
 
   <div class="author-info">
     {% if author.avatar %}
