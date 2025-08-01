@@ -1,4 +1,4 @@
-/* === Button === */
+// _sass/_elements.scss
 .btn {
   display: inline-block;
   background-color: $color-accent;
@@ -8,13 +8,33 @@
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s ease;
+  text-decoration: none;
+  text-align: center;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: darken($color-accent, 10%);
+    text-decoration: none;
+    color: $color-black;
   }
 }
 
-/* === Form Input === */
+.submit-btn {
+  background-color: $color-accent;
+  color: $color-black;
+  padding: 0.3rem 0.9rem;
+  border-radius: $radius-base;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: darken($color-accent, 10%);
+    color: $color-black;
+  }
+}
+
 input,
 textarea,
 select {
@@ -31,7 +51,25 @@ select {
   }
 }
 
-/* === Badge === */
+.contact-form {
+  max-width: 480px;
+  margin-top: 2rem;
+}
+
+.contact-info {
+  margin-bottom: 2rem;
+
+  a {
+    color: $color-accent;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
 .badge {
   display: inline-block;
   background: $color-accent;
@@ -42,7 +80,6 @@ select {
   font-weight: 600;
 }
 
-/* === Table === */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -65,7 +102,6 @@ table {
   }
 }
 
-/* === Alert Box === */
 .alert {
   padding: 1rem 1.5rem;
   border-radius: $radius-base;
