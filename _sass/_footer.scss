@@ -1,0 +1,91 @@
+.site-footer {
+  background-color: $color-background;
+  color: $color-text;
+  padding: 3rem 0;
+  font-size: 0.9rem;
+
+  .footer-grid {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 $container-padding;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2.5rem;
+  }
+
+  // Brand section
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    img,
+    svg {
+      max-width: 150px;
+      height: auto;
+    }
+
+    p {
+      margin-top: 0.75rem;
+      font-size: 0.875rem;
+      color: $color-muted;
+      user-select: none;
+    }
+  }
+
+  // Navigation sections
+  .footer-nav,
+  .footer-categories,
+  .footer-social {
+    h4 {
+      margin-bottom: 1rem;
+      font-weight: 600;
+      color: $color-accent;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 0.5rem;
+
+        a {
+          color: $color-text;
+          text-decoration: none;
+          transition: color 0.3s ease;
+
+          &:hover,
+          &:focus {
+            color: $color-accent;
+          }
+        }
+      }
+    }
+  }
+
+  // Social links flex layout
+  .footer-social {
+    ul.social-links {
+      display: flex;
+      gap: 1rem;
+
+      li {
+        margin-bottom: 0; // override margin-bottom for social icons
+      }
+
+      a {
+        font-size: 1.25rem;
+        color: $color-text;
+
+        &:hover,
+        &:focus {
+          color: $color-accent;
+        }
+      }
+    }
+  }
+}
