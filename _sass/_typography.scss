@@ -1,0 +1,62 @@
+/* === Headings === */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: $color-text;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+/* === Paragraph === */
+p {
+  margin-bottom: 1.25rem;
+  color: $color-text;
+}
+
+/* === Blockquote === */
+blockquote {
+  margin: 2rem 0;
+  padding: 1rem 1.5rem;
+  background: rgba($color-white, 0.05);
+  border-left: 4px solid $color-accent;
+  font-style: italic;
+  color: $color-muted;
+}
+
+/* === Code === */
+code,
+kbd {
+  font-family: monospace;
+  font-size: 0.9em;
+  background: rgba($color-white, 0.08);
+  padding: 0.2em 0.4em;
+  border-radius: 0.3em;
+  color: $color-accent;
+}
+
+pre {
+  background: rgba($color-white, 0.05);
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: $radius-base;
+  font-size: 0.95rem;
+}
+
+/* === Horizontal Rule === */
+hr {
+  border: 0;
+  border-top: 1px solid $color-border;
+  margin: 2rem 0;
+}
+
+/* === Small Text === */
+small {
+  font-size: 0.8rem;
+  color: $color-muted;
+}
