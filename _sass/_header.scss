@@ -1,0 +1,16 @@
+// _sass/_header.scss
+.site-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: $color-black;
+  z-index: $z-header;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: $color-accent;
+  user-select: none;
+}
