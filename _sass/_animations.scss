@@ -1,0 +1,23 @@
+/* === Transitions === */
+a,
+button,
+input,
+textarea {
+  transition: all 0.2s ease-in-out;
+}
+
+/* === Hover Effects === */
+a:hover,
+button:hover {
+  opacity: 0.85;
+}
+
+/* === Fade-in Utility === */
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
