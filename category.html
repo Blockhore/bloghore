@@ -1,0 +1,22 @@
+---
+layout: page
+title: Kategori
+permalink: /category/
+---
+
+<section class="all-categories container">
+  <h1>Semua Kategori</h1>
+  <p>Temukan artikel berdasarkan kategori yang tersedia di Bloghore.</p>
+
+  <ul class="category-list">
+    {% assign sorted_categories = site.categories | sort %}
+    {% for category in sorted_categories %}
+      <li class="category-item">
+        <a href="{{ '/category/' | append: category[0] | relative_url }}">
+          {{ category[0] | capitalize }}
+          <span class="count">({{ category[1].size }})</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
