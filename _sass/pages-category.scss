@@ -1,0 +1,52 @@
+.all-categories {
+  padding-block: $section-spacing;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: $color-muted;
+    margin-bottom: 2rem;
+  }
+
+  .category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .category-item {
+    background-color: $color-border;
+    padding: 1rem 1.25rem;
+    border-radius: $radius-base;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $color-accent;
+      color: $color-black;
+
+      a {
+        color: $color-black;
+      }
+    }
+
+    a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: $color-white;
+      font-weight: 500;
+      text-decoration: none;
+
+      .count {
+        font-size: 0.875rem;
+        color: $color-muted;
+      }
+    }
+  }
+}
