@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Disallow jika ada halaman atau direktori yang ingin dicegah
+# Disallow: /drafts/
+# Disallow: /private/
+
+Sitemap: {{ site.url | append: "/sitemap.xml" }}
