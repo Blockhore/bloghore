@@ -1,0 +1,137 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  overflow-y: auto;
+  padding: 1.5rem;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &-overlay {
+    position: fixed;
+    inset: 0;
+    cursor: pointer;
+    background: transparent;
+  }
+
+  &-content {
+    background: $color-background;
+    color: $color-text;
+    border-radius: $radius-base;
+    box-shadow: $shadow-soft;
+    max-width: 500px;
+    width: 100%;
+    padding: 2rem;
+    position: relative;
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: transparent;
+      border: none;
+      font-size: 1.8rem;
+      color: $color-accent;
+      cursor: pointer;
+      transition: color 0.2s ease;
+
+      &:hover,
+      &:focus {
+        color: lighten($color-accent, 15%);
+      }
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        margin-top: 1rem;
+        font-weight: 600;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="file"],
+      textarea {
+        margin-top: 0.25rem;
+        padding: 0.5rem 0.75rem;
+        border-radius: $radius-base;
+        border: 1px solid $color-border;
+        background: transparent;
+        color: $color-text;
+        font-size: $font-size-base;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+          border-color: $color-accent;
+          outline: none;
+          box-shadow: 0 0 5px $color-accent;
+          background: rgba($color-accent, 0.1);
+        }
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+
+      .help-text {
+        font-size: 0.75rem;
+        color: $color-muted;
+        margin-top: 0.25rem;
+      }
+
+      .required {
+        color: $color-accent;
+      }
+
+      .submit-btn {
+        margin-top: 2rem;
+        align-self: flex-start;
+        background-color: $color-accent;
+        color: $color-black;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: $radius-base;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover,
+        &:focus {
+          background-color: darken($color-accent, 10%);
+          outline: none;
+        }
+      }
+
+      .form-message {
+        margin-top: 1rem;
+        font-size: 0.875rem;
+        color: $color-accent;
+        display: none;
+
+        &.visible {
+          display: block;
+        }
+      }
+    }
+  }
+}
