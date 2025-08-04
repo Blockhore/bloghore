@@ -1,7 +1,7 @@
 title: Bloghore
 description: Web edukasi dan blog seputar blockchain, crypto, dan web3
 baseurl: "" # root domain
-url: ""     # ganti jika sudah ada domain
+url: "https://bloghore.netlify.app/"     # ganti jika sudah ada domain
 
 permalink: /:title/
 
