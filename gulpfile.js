@@ -13,13 +13,16 @@ const paths = {
 // Compile SCSS
 gulp.task('style', function () {
   return gulp.src(paths.scss)
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({
+      includePaths: ['_sass']
+    }).on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(gulp.dest(paths.dest))
     .pipe(cleanCSS())
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(paths.dest));
 });
+
 
 // Default
 gulp.task('default', gulp.series('style'));
