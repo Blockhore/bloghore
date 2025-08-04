@@ -1,24 +1,30 @@
----
----
-
-@import "include-media";
-@import "normalize";
+// 1. Dasar dan utilitas
 @import "variables";
 @import "mixins";
+@import "include-media";
+
+// 2. Reset dan styling dasar
+@import "normalize";
 @import "typography";
 @import "animations";
+
+// 3. Komponen dan elemen UI
 @import "icons";
 @import "menu";
 @import "search";
 @import "elements";
-@import "header";
-@import "home";
-@import "post";
+@import "modal";
 @import "pagination";
 @import "share";
 @import "form";
-@import "author";
-@import "modal";
+
+// 4. Layout dan struktur halaman
+@import "header";
 @import "footer";
+@import "home";
+@import "post";
+@import "author";
+
+// 5. Halaman khusus
 @import "pages-about";
-@import "pages-category"
+@import "pages-category";
