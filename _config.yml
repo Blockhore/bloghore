@@ -30,6 +30,9 @@ collections:
     output: true
     permalink: /authors/:name/
 
+sass:
+  style: compressed
+
 defaults:
   -
     scope:
@@ -43,5 +46,9 @@ exclude:
   - Gemfile.lock
   - node_modules
   - vendor
+  - gulpfile.js
+  - package.json
+  - package-lock.json
+  - README.md
 
 theme: minima
