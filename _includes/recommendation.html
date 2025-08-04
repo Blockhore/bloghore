@@ -1,4 +1,4 @@
-{% assign related_posts = site.posts | where_exp: "post", "post.tags | where: 'nil', false" %}
+{% assign related_posts = site.posts | where_exp: "post", "post.tags != nil and post.tags != empty" %}
 {% assign related = "" | split: "" %}
 
 {% for post in related_posts %}
