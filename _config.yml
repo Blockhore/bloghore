@@ -15,7 +15,6 @@ plugins:
   - jekyll-polyglot
   - jekyll-archives
   - jekyll-admin
-  - jekyll-tagging
 
 paginate: 6
 paginate_path: "/page:num"
