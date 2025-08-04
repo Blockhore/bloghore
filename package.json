@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "build": "gulp"
+    "build": "mkdir -p dist && your-build-command"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
