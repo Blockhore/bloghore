@@ -42,7 +42,7 @@ layout: default
   <section class="popular-tags">
     <h2>Tag Populer</h2>
     <ul class="tag-list">
-      {% assign popular_tags = site.tags | sort: "last" | reverse %}
+      {% assign popular_tags = site.tags | sort: "size" | reverse %}
       {% for tag in popular_tags %}
         <li><a href="{{ '/tags/' | append: tag[0] | relative_url }}">{{ tag[0] }} ({{ tag[1].size }})</a></li>
       {% endfor %}
