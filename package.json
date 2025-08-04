@@ -2,8 +2,7 @@
   "name": "bloghore",
   "version": "1.0.0",
   "scripts": {
-    "build": "gulp"
-    "build": "mkdir -p dist && your-build-command"
+    "build": "mkdir -p dist && gulp"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
