@@ -2,8 +2,8 @@
   "name": "bloghore",
   "version": "1.0.0",
   "scripts": {
-    "build": "mkdir -p dist && gulp"
-  },
+  "build": "gulp && jekyll build"
+}
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
