@@ -16,6 +16,9 @@ plugins:
   - jekyll-archives
   - jekyll-admin
 
+sass:
+  sass_dir: _sass
+
 paginate: 6
 paginate_path: "/page:num"
 
