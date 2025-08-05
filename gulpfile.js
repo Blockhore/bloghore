@@ -19,7 +19,7 @@ gulp.task('style', function () {
     .pipe(autoprefixer())
     .pipe(gulp.dest(paths.dest))
     .pipe(cleanCSS())
-    .pipe(dest('assets/css'))
+    .pipe(gulp.dest('assets/css'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(paths.dest));
 });
