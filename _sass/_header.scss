@@ -20,23 +20,25 @@
     align-items: center;
   }
 
-  .header-center {
-    flex: 1;
-    justify-content: center;
+  .logo {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: $color-accent;
+    user-select: none;
+  }
 
-    .nav-list {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
+  .main-nav .nav-list {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
 
-      li a {
-        color: $color-white;
-        text-decoration: none;
-        font-weight: 500;
+    li a {
+      color: $color-white;
+      text-decoration: none;
+      font-weight: 500;
 
-        &:hover {
-          color: $color-accent;
-        }
+      &:hover {
+        color: $color-accent;
       }
     }
   }
@@ -55,11 +57,11 @@
     }
   }
 
-  .header-right button {
+  .icon-btn {
     background: none;
     border: none;
     color: $color-white;
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin-left: 0.5rem;
     cursor: pointer;
 
@@ -73,7 +75,6 @@
   }
 }
 
-// Responsive
 @media (max-width: 768px) {
   .header-center {
     display: none;
