@@ -1,13 +1,11 @@
 <header class="site-header">
   <div class="container nav-container">
-    <!-- Kiri: Logo -->
     <div class="header-left">
       <div class="logo">
         {% include logo.html %}
       </div>
     </div>
 
-    <!-- Tengah: Navigasi -->
     <div class="header-center">
       <nav class="main-nav" id="main-nav">
         <ul class="nav-list">
@@ -20,19 +18,17 @@
       </nav>
     </div>
 
-    <!-- Kanan: Tombol & ikon -->
     <div class="header-right">
       <a href="https://forms.gle/your-form-id" class="submit-btn">Submit</a>
-      <button id="search-btn" aria-label="Search">
+      <button id="search-btn" class="icon-btn" aria-label="Search">
         <i class="fas fa-search"></i>
       </button>
-      <button id="toggle-dark" aria-label="Toggle dark mode">
+      <button id="toggle-dark" class="icon-btn" aria-label="Toggle dark mode">
         <i class="fas fa-moon"></i>
       </button>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <button class="nav-toggle icon-btn" id="nav-toggle" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </button>
     </div>
   </div>
 </header>
-
