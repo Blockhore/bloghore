@@ -1,111 +1,93 @@
-.featured-articles {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 2rem;
-  margin-bottom: $section-spacing;
+// _sass/_home.scss
 
-  h2 {
-    font-size: 1.75rem;
-    margin-bottom: 1.25rem;
-    color: $color-white;
+.home {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  .highlight-articles,
+  .popular-articles,
+  .popular-tags,
+  .latest-articles {
+    margin-bottom: $section-spacing;
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+      color: $color-accent;
+    }
   }
 
-  .left-popular {
-    .featured-post {
-      position: relative;
-      border-radius: $radius-base;
-      overflow: hidden;
+  .highlight-articles {
+    .post-card {
+      border-left: 4px solid $color-accent;
+    }
+  }
 
-      .image-bg {
-        background: repeating-linear-gradient(
-          45deg,
-          rgba(255, 255, 255, 0.05),
-          rgba(255, 255, 255, 0.05) 10px,
-          transparent 10px,
-          transparent 20px
-        );
-        background-color: #888;
-        width: 100%;
-        height: 260px;
-      }
+  .popular-articles {
+    .post-card {
+      background-color: rgba($color-white, 0.025);
+    }
+  }
 
-      .featured-content {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 1.25rem;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  .popular-tags {
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
 
-        h3 {
-          font-size: 1.5rem;
-          font-weight: 700;
-          color: $color-white;
-          margin-bottom: 0.5rem;
-        }
+      li {
+        list-style: none;
 
-        .meta {
-          display: flex;
-          justify-content: space-between;
-          font-size: 0.85rem;
-          color: $color-muted;
+        a {
+          @include chip;
+          text-decoration: none;
+
+          &:hover {
+            background-color: darken($color-accent, 10%);
+          }
         }
       }
     }
   }
 
-  .right-most-read {
-    .most-read-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .read-post {
-      background-color: rgba($color-white, 0.03);
-      padding: 0.75rem;
-      border-radius: $radius-base;
-      overflow: hidden;
-
-      .image-bg {
-        background: repeating-linear-gradient(
-          45deg,
-          rgba(255, 255, 255, 0.05),
-          rgba(255, 255, 255, 0.05) 10px,
-          transparent 10px,
-          transparent 20px
-        );
-        background-color: #aaa;
-        width: 100%;
-        height: 100px;
-        margin-bottom: 0.75rem;
-        border-radius: $radius-sm;
-      }
-
-      h4 {
-        font-size: 1rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-        color: $color-white;
-      }
-
-      .meta {
-        font-size: 0.75rem;
-        color: $color-muted;
-        display: flex;
-        flex-direction: column;
-        gap: 0.25rem;
-      }
+  .latest-articles {
+    .post-card {
+      border: 1px solid $color-border;
     }
   }
-}
 
-@media (max-width: 768px) {
-  .featured-articles {
-    grid-template-columns: 1fr;
+  .grid-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+  }
 
-    .most-read-list {
-      grid-template-columns: 1fr;
+  .post-card {
+    background-color: rgba($color-white, 0.03);
+    padding: 1.25rem;
+    border-radius: $radius-base;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: $color-white;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: $color-muted;
+      margin-bottom: 0.5rem;
+    }
+
+    .meta {
+      font-size: 0.85rem;
+      color: $color-muted;
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: $shadow-soft;
     }
   }
 }
