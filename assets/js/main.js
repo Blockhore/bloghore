@@ -50,6 +50,16 @@ if (scrollBtn) {
   const resultsContainer = document.getElementById("search-results");
   const STORAGE_KEY = "bloghore-search-query";
 
+  // Toggle show/hide search form
+  if (searchToggle && searchForm) {
+    searchToggle.addEventListener("click", () => {
+      searchForm.classList.toggle("hidden");
+      if (!searchForm.classList.contains("hidden")) {
+        searchInput.focus();
+      }
+    });
+  }
+
   // Load previous query from localStorage
   const savedQuery = localStorage.getItem(STORAGE_KEY);
   if (savedQuery) {
