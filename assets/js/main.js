@@ -82,6 +82,8 @@ if (scrollBtn) {
 
   function performSearch(query) {
     clearResults();
+    resultsContainer.innerHTML = "<p>Mencari...</p>";
+    resultsContainer.style.display = "block";
     fetch("/search-index.json")
       .then((res) => res.json())
       .then((posts) => {
