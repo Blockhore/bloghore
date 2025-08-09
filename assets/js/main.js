@@ -46,14 +46,14 @@ if (scrollBtn) {
 // search.js
 (() => {
   const searchForm = document.getElementById("search-form");
-  const searchInput = document.getElementById("search-input");
   const searchToggle = document.getElementById("search-toggle");
+  const searchInput = document.getElementById("search-input");
   const resultsContainer = document.getElementById("search-results");
   const STORAGE_KEY = "bloghore-search-query";
 
   // Toggle show/hide search form
   if (searchToggle && searchForm) {
-    searchToggle.addEventListener("click", () => {
+    searchToggle.addEventListener("click", (e) => {
       e.preventDefault();
       searchForm.classList.toggle("hidden");
       
