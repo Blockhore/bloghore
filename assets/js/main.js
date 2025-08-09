@@ -47,16 +47,20 @@ if (scrollBtn) {
 (() => {
   const searchForm = document.getElementById("search-form");
   const searchInput = document.getElementById("search-input");
-  const resultsContainer = document.getElementById("search-results");
   const searchToggle = document.getElementById("search-toggle");
+  const resultsContainer = document.getElementById("search-results");
   const STORAGE_KEY = "bloghore-search-query";
 
   // Toggle show/hide search form
   if (searchToggle && searchForm) {
     searchToggle.addEventListener("click", () => {
+      e.preventDefault();
       searchForm.classList.toggle("hidden");
+      
       if (!searchForm.classList.contains("hidden")) {
         searchInput.focus();
+      } else {
+        searchInput.blur();
       }
     });
   }
