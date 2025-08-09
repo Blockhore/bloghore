@@ -12,6 +12,10 @@
     padding: 0.5rem 0.75rem;
   }
 
+  .search-input.hidden {
+    display: none;
+  }
+
   .search-input {
     flex: 1;
     border: none;
