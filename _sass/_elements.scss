@@ -1,4 +1,10 @@
 // _sass/_elements.scss
+.container {
+  max-width: 1200px; // atau sesuai kebutuhan
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 .btn {
   display: inline-block;
   background-color: $color-accent;
