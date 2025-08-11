@@ -128,6 +128,72 @@
     }
   }
 
+  /* Iklan */
+.home-ad {
+  margin: 2rem auto;
+  .ad-box {
+    width: 100%;
+    text-align: center;
+    img {
+      max-width: 100%;
+      height: auto;
+      display: inline-block;
+    }
+  }
+}
+
+/* Latest Articles */
+.latest-articles {
+  margin-top: 3rem;
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1.5rem;
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .see-more {
+      color: #ff9900;
+      font-size: 0.9rem;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+
+    .post-card {
+      background: #fff;
+      .thumb {
+        width: 100%;
+        padding-top: 60%;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 0.75rem;
+      }
+      h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+      p.meta {
+        font-size: 0.8rem;
+        color: #666;
+      }
+    }
+  }
+}
+
   /* --------- responsive --------- */
   @media (max-width: 1000px) {
     .popular-grid {
