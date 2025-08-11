@@ -64,7 +64,7 @@ layout: default
   </div>
 
   <div class="latest-articles">
-    {% for post in site.posts limit: 4 %}
+    {% for post in site.posts limit: 8 %}
       <article class="post-card" style="background-image: url('{{ post.image | relative_url }}')">
         <div class="overlay">
           <a href="{{ post.url | relative_url }}">
