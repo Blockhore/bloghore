@@ -163,36 +163,37 @@
 
   // kolom artikel
   .latest-articles {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 200px; // tinggi setiap baris
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 
-    .post-card {
-      background-size: cover;
-      background-position: center;
-      border-radius: 8px;
-      overflow: hidden;
-      position: relative;
-      height: 200px;
-      color: white;
+  .post-card {
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    color: white;
 
-      .overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        padding: 10px;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
 
-        h3 {
-          font-size: 1rem;
-          margin: 0;
-        }
+      h3 {
+        font-size: 1rem;
+        margin: 0;
+      }
 
-        .meta {
-          font-size: 0.85rem;
-          opacity: 0.8;
-        }
+      .meta {
+        font-size: 0.85rem;
+        opacity: 0.8;
       }
     }
   }
