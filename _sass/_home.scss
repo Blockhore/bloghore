@@ -148,83 +148,78 @@
 // ---------- end .popular-articles ----------
 
 // lastest section
-.latest-section {
-  display: grid;
-  grid-template-columns: 1fr 2fr; // kiri iklan, kanan artikel
-  gap: 20px;
-  margin-top: 40px;
-
-  // kolom iklan
-  .sidebar-ads {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto 1.5rem auto;
-  overflow: hidden;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-
-  a {
-    display: block;
-  }
-
-  img {
-    width: 100%;
-    height: 200px; // tinggi tetap, bikin persegi panjang
-    object-fit: cover; // crop gambar biar pas persegi panjang
-    display: block;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: scale(1.02);
-    }
-  }
-}
-
-  // kolom artikel
-  .latest-articles {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 200px; // tinggi setiap baris
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-
-  .post-card {
-    background-size: cover;
-    background-position: center;
-    border-radius: 8px;
-    overflow: hidden;
-    position: relative;
-    color: white;
-
-    .overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
+  .latest-section {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  
+    // kolom iklan (full width)
+    .sidebar-ads {
       width: 100%;
-      padding: 10px;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-
-      h3 {
-        font-size: 1rem;
-        margin: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+  
+      a {
+        display: block;
       }
-
-      .meta {
-        font-size: 0.85rem;
-        opacity: 0.8;
+  
+      img {
+        width: 100%;
+        height: 200px; // bikin persegi panjang
+        object-fit: cover; // crop tengah
+        display: block;
+        transition: transform 0.3s ease;
+  
+        &:hover {
+          transform: scale(1.02);
+        }
       }
     }
-  }
-}
-
-// responsif untuk mobile
-    @media (max-width: 768px) {
-      .latest-section {
-        grid-template-columns: 1fr; // jadi satu kolom
-        .latest-articles {
-          grid-template-columns: 1fr;
+  
+    // grid artikel (4 kolom)
+    .latest-articles {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 200px;
+      gap: 20px;
+  
+      .post-card {
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        color: white;
+  
+        .overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          padding: 10px;
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  
+          h3 {
+            font-size: 1rem;
+            margin: 0;
+          }
+  
+          .meta {
+            font-size: 0.85rem;
+            opacity: 0.8;
+          }
         }
+      }
+    }
+  
+    // responsif
+    @media (max-width: 768px) {
+      .latest-articles {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
       }
     }
   }
