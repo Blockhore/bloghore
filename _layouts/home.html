@@ -10,12 +10,20 @@ layout: default
       <h2>Most Popular.</h2>
       {% assign popular = site.posts | sort: "views" | reverse %}
       {% assign main_popular = popular | first %}
-      <article class="post-card large" style="background-image: url('{{ main_popular.image | relative_url }}')">
+      <article 
+        class="post-card large"
+        {% if main_popular.image %}
+          style="background-image: url('{{ main_popular.image | relative_url }}')"
+        {% endif %}
+      >
         <div class="overlay">
           <a href="{{ main_popular.url | relative_url }}">
             <h3>{{ main_popular.title }}</h3>
           </a>
-          <p class="meta">by {{ main_popular.author }} — {% include date.html date=main_popular.date %}</p>
+          <p class="meta">
+            by {{ main_popular.author }}
+            <span>— {% include date.html date=main_popular.date %}</span>
+          </p>
         </div>
       </article>
     </div>
@@ -26,12 +34,20 @@ layout: default
       <div class="side-grid">
         {% assign side_popular = popular | slice: 1, 4 %}
         {% for post in side_popular %}
-          <article class="post-card small" style="background-image: url('{{ post.image | relative_url }}')">
+          <article 
+            class="post-card small"
+            {% if post.image %}
+              style="background-image: url('{{ post.image | relative_url }}')"
+            {% endif %}
+          >
             <div class="overlay">
               <a href="{{ post.url | relative_url }}">
                 <h3>{{ post.title }}</h3>
               </a>
-              <p class="meta">by {{ post.author }} — {% include date.html date=post.date %}</p>
+              <p class="meta">
+                by {{ post.author }}
+                <span>— {% include date.html date=post.date %}</span>
+              </p>
             </div>
           </article>
         {% endfor %}
@@ -40,4 +56,3 @@ layout: default
 
   </div>
 </section>
-
