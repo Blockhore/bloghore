@@ -137,26 +137,22 @@
 
   // kolom iklan
   .sidebar-ads {
+  max-width: 1200px;
   width: 100%;
-  background-color: #f9f9f9; // background opsional
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  margin: 0 auto 1.5rem auto;
   overflow: hidden;
-  padding: 0;
-  margin-bottom: 1.5rem;
-  text-align: center;
+  border-radius: 8px;
+  border: 1px solid #ddd;
 
   a {
     display: block;
-    text-decoration: none;
-    color: inherit;
   }
 
   img {
     width: 100%;
-    height: auto;
+    height: 200px; // tinggi tetap, bikin persegi panjang
+    object-fit: cover; // crop gambar biar pas persegi panjang
     display: block;
-    object-fit: cover;
     transition: transform 0.3s ease;
 
     &:hover {
