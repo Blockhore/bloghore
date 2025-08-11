@@ -57,29 +57,23 @@ layout: default
   </div>
 </section>
 
-<!-- Iklan -->
-<section class="home-ad container">
+<!--- lastest section --->
+<section class="latest-section">
   <div class="ad-box">
-    <!-- Bisa taruh script iklan atau gambar banner -->
-    <img src="/assets/img/ads/banner-970x250.png" alt="Advertisement">
+    Iklan
   </div>
-</section>
 
-<!-- Lastest Articles -->
-<section class="latest-articles container">
-  <div class="section-header">
-    <h2>Lastest Articles.</h2>
-    <a href="#" class="see-more">See what’s new on Bloghore</a>
-  </div>
-  <div class="articles-grid">
-    {% assign latest_posts = site.posts | sort: "date" | reverse %}
-    {% for post in latest_posts limit: 8 %}
-    <article class="post-card">
-      <div class="thumb" style="background-image: url('{{ post.image | relative_url }}')"></div>
-      <h3>{{ post.title }}</h3>
-      <p>{{ post.excerpt | strip_html | truncate: 100 }}</p>
-      <p class="meta">by {{ post.author }} — {% include date.html date=post.date %}</p>
-    </article>
+  <div class="latest-articles">
+    {% for post in site.posts limit: 4 %}
+      <article class="post-card" style="background-image: url('{{ post.image | relative_url }}')">
+        <div class="overlay">
+          <a href="{{ post.url | relative_url }}">
+            <h3>{{ post.title }}</h3>
+          </a>
+          <p class="meta">by {{ post.author }} — {% include date.html date=post.date %}</p>
+        </div>
+      </article>
     {% endfor %}
   </div>
 </section>
+
