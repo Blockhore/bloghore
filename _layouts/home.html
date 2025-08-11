@@ -65,9 +65,10 @@ layout: default
     </a>
   </div>
 
+  <h2>Lastest Article.</h2>
+  <a>See what's new on Bloghore</a>
+
   <div class="latest-articles">
-    <h2>Lastest Article.</h2>
-    <a>See what's new on Bloghore</a>
     {% for post in site.posts limit: 8 %}
       <article class="post-card" style="background-image: url('{{ post.image | relative_url }}')">
         <div class="overlay">
