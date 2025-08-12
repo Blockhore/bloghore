@@ -173,8 +173,10 @@
     border-radius: 8px;
     overflow: hidden;
     background: #fff;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 
     img {
