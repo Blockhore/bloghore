@@ -83,7 +83,7 @@ layout: default
 
 <!--- others section --->
 <section class="other-articles">
-    <div class="sidebar-ads">
+  <div class="sidebar-ads">
     <a href="https://contoh-iklan.com" target="_blank" rel="noopener">
       <img src="/assets/img/rafiali.png" alt="Iklan Banner">
     </a>
@@ -102,10 +102,12 @@ layout: default
           <a href="{{ post.url | relative_url }}">
             <h3>{{ post.title }}</h3>
           </a>
-          <p class="meta">
-            by {{ post.author }} — {% include date.html date=post.date %}
+          <p class="excerpt">
+            {{ post.excerpt | strip_html | truncate: 100 }}
           </p>
-          <p class="excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+          <p class="meta">
+            {% include date.html date=post.date %}
+          </p>
         </div>
       </article>
     {% endfor %}
