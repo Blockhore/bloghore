@@ -71,62 +71,40 @@
   }
 
   /* --------- RIGHT: 4 small cards (2x2) ---------- */
-  .popular-side {
-    .side-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.9rem;
-      align-items: start;
+.popular-side {
+  .side-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .post-card.small {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+
+    img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      display: block;
     }
 
-    .post-card.small {
-      border-radius: 10px;
-      overflow: hidden;
-      background: #fff;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
-      display: flex;
-      flex-direction: column;
+    h3 {
+      font-size: 1rem;
+      margin: 10px;
+      line-height: 1.3;
+      color: #111;
+    }
 
-      // gunakan background-image yang kamu taruh di element (style="background-image: url(...)")
-      // tampilkan bagian gambar sebagai block di atas
-      &::before {
-        content: "";
-        display: block;
-        height: 94px;                     // tinggi area gambar kecil
-        background-image: inherit;        // ambil background-image dari elemen (style attribute)
-        background-size: cover;
-        background-position: center;
-      }
-
-      // area teks di bawah gambar
-      .overlay {
-        padding: 0.7rem 0.85rem;
-        background: transparent;
-        display: flex;
-        flex-direction: column;
-        gap: 0.45rem;
-
-        h3 {
-          margin: 0;
-          font-size: 0.95rem;
-          font-weight: 700;
-          color: #111;
-          line-height: 1.1;
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-
-        .meta {
-          display: flex;
-          justify-content: space-between;
-          font-size: 0.78rem;
-          color: #666;
-        }
-      }
+    .meta {
+      font-size: 0.85rem;
+      color: #777;
+      margin: 0 10px 10px;
     }
   }
+}
   
   /* --------- responsive --------- */
   @media (max-width: 1000px) {
