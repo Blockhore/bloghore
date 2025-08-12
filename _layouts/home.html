@@ -70,8 +70,9 @@ layout: default
 
   <div class="latest-articles">
     {% for post in site.posts limit: 8 %}
-      <article class="post-card" style="background-image: url('{{ post.image | relative_url }}')">
-        <div class="overlay">
+      <article class="post-card">
+        <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+        <div class="content">
           <a href="{{ post.url | relative_url }}">
             <h3>{{ post.title }}</h3>
           </a>
