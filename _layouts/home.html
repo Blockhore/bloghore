@@ -35,11 +35,14 @@ layout: default
         {% assign side_popular = popular | slice: 1, 4 %}
         {% for post in side_popular %}
           <article class="post-card small">
-            <a href="{{ post.url | relative_url }}" class="full-link"></a>
             {% if post.image %}
-              <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+              <a href="{{ post.url | relative_url }}">
+                <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+              </a>
             {% endif %}
+            <a href="{{ post.url | relative_url }}">
               <h3>{{ post.title }}</h3>
+            </a>
             <p class="meta">
               by {{ post.author }}
               <span>— {% include date.html date=post.date %}</span>
