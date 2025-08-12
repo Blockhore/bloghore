@@ -82,10 +82,32 @@ layout: default
 </section>
 
 <!--- others section --->
-
-  <div class="sidebar-ads">
+<section class="other-articles">
+    <div class="sidebar-ads">
     <a href="https://contoh-iklan.com" target="_blank" rel="noopener">
       <img src="/assets/img/rafiali.png" alt="Iklan Banner">
     </a>
   </div>
-
+  
+  <h2>Other Articles</h2>
+  
+  <div class="other-grid">
+    {% assign other_posts = site.posts | slice: 0, 16 %}
+    {% for post in other_posts %}
+      <article class="other-card">
+        <div class="thumb">
+          <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+        </div>
+        <div class="content">
+          <a href="{{ post.url | relative_url }}">
+            <h3>{{ post.title }}</h3>
+          </a>
+          <p class="meta">
+            by {{ post.author }} — {% include date.html date=post.date %}
+          </p>
+          <p class="excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
