@@ -69,7 +69,11 @@ layout: default
   <div class="latest-articles">
     {% for post in site.posts limit: 8 %}
       <article class="post-card">
-        <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+          {% if post.image %}
+            <a href="{{ post.url | relative_url }}">
+              <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+            </a>
+          {% endif %}
         <div class="content">
           <a href="{{ post.url | relative_url }}">
             <h3>{{ post.title }}</h3>
@@ -96,7 +100,11 @@ layout: default
     {% for post in other_posts %}
       <article class="other-card">
         <div class="thumb">
-          <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+          {% if post.image %}
+            <a href="{{ post.url | relative_url }}">
+              <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+            </a>
+          {% endif %}
         </div>
         <div class="content">
           <a href="{{ post.url | relative_url }}">
