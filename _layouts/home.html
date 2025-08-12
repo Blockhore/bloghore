@@ -10,7 +10,7 @@ layout: default
       <h2>Most Popular.</h2>
       {% assign popular = site.posts | sort: "views" | reverse %}
       {% assign main_popular = popular | first %}
-      <article 
+      <a 
         class="post-card large"
         {% if main_popular.image %}
           style="background-image: url('{{ main_popular.image | relative_url }}')"
@@ -25,7 +25,7 @@ layout: default
             <span>— {% include date.html date=main_popular.date %}</span>
           </p>
         </div>
-      </article>
+      </a>
     </div>
 
     <!-- Kolom kanan -->
@@ -34,7 +34,7 @@ layout: default
       <div class="side-grid">
         {% assign side_popular = popular | slice: 1, 4 %}
         {% for post in side_popular %}
-          <article class="post-card small">
+          <a class="post-card small">
             {% if post.image %}
               <a href="{{ post.url | relative_url }}">
                 <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
@@ -47,7 +47,7 @@ layout: default
               by {{ post.author }}
               <span>— {% include date.html date=post.date %}</span>
             </p>
-          </article>
+          </a>
         {% endfor %}
       </div>
     </div>
@@ -68,7 +68,7 @@ layout: default
 
   <div class="latest-articles">
     {% for post in site.posts limit: 8 %}
-      <article class="post-card">
+      <a class="post-card">
         <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
         <div class="content">
           <a href="{{ post.url | relative_url }}">
@@ -76,7 +76,7 @@ layout: default
           </a>
           <p class="meta">by {{ post.author }} — {% include date.html date=post.date %}</p>
         </div>
-      </article>
+      </a>
     {% endfor %}
   </div>
 </section>
@@ -94,7 +94,7 @@ layout: default
   <div class="other-grid">
     {% assign other_posts = site.posts | slice: 0, 16 %}
     {% for post in other_posts %}
-      <article class="other-card">
+      <a class="other-card">
         <div class="thumb">
           <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
         </div>
@@ -109,7 +109,7 @@ layout: default
             {% include date.html date=post.date %}
           </p>
         </div>
-      </article>
+      </a>
     {% endfor %}
   </div>
 </section>
