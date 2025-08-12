@@ -34,21 +34,19 @@ layout: default
       <div class="side-grid">
         {% assign side_popular = popular | slice: 1, 4 %}
         {% for post in side_popular %}
-          <article 
-            class="post-card small"
+          <article class="post-card small">
             {% if post.image %}
-              style="background-image: url('{{ post.image | relative_url }}')"
-            {% endif %}
-          >
-            <div class="overlay">
               <a href="{{ post.url | relative_url }}">
-                <h3>{{ post.title }}</h3>
+                <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
               </a>
-              <p class="meta">
-                by {{ post.author }}
-                <span>— {% include date.html date=post.date %}</span>
-              </p>
-            </div>
+            {% endif %}
+            <a href="{{ post.url | relative_url }}">
+              <h3>{{ post.title }}</h3>
+            </a>
+            <p class="meta">
+              by {{ post.author }}
+              <span>— {% include date.html date=post.date %}</span>
+            </p>
           </article>
         {% endfor %}
       </div>
