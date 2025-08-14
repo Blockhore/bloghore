@@ -10,22 +10,22 @@ layout: default
       <h2>Most Popular.</h2>
       {% assign popular = site.posts | sort: "views" | reverse %}
       {% assign main_popular = popular | first %}
-      <article 
-        class="post-card large"
-        {% if main_popular.image %}
-          style="background-image: url('{{ main_popular.image | relative_url }}')"
-        {% endif %}
-      >
-        <div class="overlay">
-          <a href="{{ main_popular.url | relative_url }}">
-            <h3>{{ main_popular.title }}</h3>
-          </a>
-          <p class="meta">
-            by {{ main_popular.author }}
-            <span>— {% include date.html date=main_popular.date %}</span>
-          </p>
-        </div>
-      </article>
+      <a href="{{ main_popular.url | relative_url }}">
+        <article 
+          class="post-card large"
+          {% if main_popular.image %}
+            style="background-image: url('{{ main_popular.image | relative_url }}')"
+          {% endif %}
+        >
+          <div class="overlay">
+              <h3>{{ main_popular.title }}</h3>
+            <p class="meta">
+              by {{ main_popular.author }}
+              <span>— {% include date.html date=main_popular.date %}</span>
+            </p>
+          </div>
+        </article>
+      </a>
     </div>
 
     <!-- Kolom kanan -->
