@@ -21,7 +21,10 @@
     </div>
 
     <div class="header-right">
-      <a href="https://forms.gle/your-form-id" class="submit-btn">Submit</a>
+      <a class="submit-btn">
+        {% include modal.html %}
+        Submit
+      </a>
       <button id="search-btn" class="icon-btn" aria-label="Search">
         <i class="fas fa-search"></i>
         {% include search.html %}
