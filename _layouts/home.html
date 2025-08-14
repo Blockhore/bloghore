@@ -34,20 +34,18 @@ layout: default
       <div class="side-grid">
         {% assign side_popular = popular | slice: 1, 4 %}
         {% for post in side_popular %}
+        <a href="{{ main_popular.url | relative_url }}">
           <article class="post-card small">
             {% if post.image %}
-              <a href="{{ post.url | relative_url }}">
                 <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
-              </a>
             {% endif %}
-            <a href="{{ post.url | relative_url }}">
               <h3>{{ post.title }}</h3>
-            </a>
             <p class="meta">
               by {{ post.author }}
               <span>— {% include date.html date=post.date %}</span>
             </p>
           </article>
+        </a>
         {% endfor %}
       </div>
     </div>
@@ -68,19 +66,17 @@ layout: default
 
   <div class="latest-articles">
     {% for post in site.posts limit: 8 %}
+    <a href="{{ main_popular.url | relative_url }}">
       <article class="post-card">
           {% if post.image %}
-            <a href="{{ post.url | relative_url }}">
               <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
-            </a>
           {% endif %}
         <div class="content">
-          <a href="{{ post.url | relative_url }}">
             <h3>{{ post.title }}</h3>
-          </a>
           <p class="meta">by {{ post.author }} — {% include date.html date=post.date %}</p>
         </div>
       </article>
+    </a>
     {% endfor %}
   </div>
 </section>
@@ -98,18 +94,15 @@ layout: default
   <div class="other-grid">
     {% assign other_posts = site.posts | slice: 0, 16 %}
     {% for post in other_posts %}
+    <a href="{{ main_popular.url | relative_url }}">
       <article class="other-card">
         <div class="thumb">
           {% if post.image %}
-            <a href="{{ post.url | relative_url }}">
               <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
-            </a>
           {% endif %}
         </div>
         <div class="content">
-          <a href="{{ post.url | relative_url }}">
             <h3>{{ post.title }}</h3>
-          </a>
           <p class="excerpt">
             {{ post.excerpt | strip_html | truncate: 100 }}
           </p>
@@ -118,6 +111,7 @@ layout: default
           </p>
         </div>
       </article>
+    </a>
     {% endfor %}
   </div>
 </section>
