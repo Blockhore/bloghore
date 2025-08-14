@@ -67,28 +67,6 @@
           color: rgba(255,255,255,0.95);
         }
       }
-
-        a:hover {
-        .post-card {
-          transform: scale(1.05); /* zoom card */
-          transition: transform 0.4s ease;
-          background-size: 110%; /* zoom-in background */
-        }
-      
-        h3 {
-          color: yellow;
-          transition: color 0.3s ease;
-        }
-      }
-      
-      /* Supaya transisi smooth saat tidak di-hover */
-      .post-card {
-        transition: transform 0.4s ease, background-size 0.4s ease;
-      
-        h3 {
-          transition: color 0.3s ease;
-        }
-      }
     }
   }
 
