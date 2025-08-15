@@ -20,6 +20,24 @@
 
   /* --------- LEFT: big hero card ---------- */
   .popular-main {
+    a {
+    display: block; // supaya area klik penuh
+    transition: transform 0.4s ease;
+
+    &:hover {
+      .post-card.large {
+        transform: scale(1.05);
+        background-size: 110%; // zoom background
+        transition: transform 0.4s ease, background-size 0.4s ease;
+      }
+
+      .overlay h3 {
+        color: yellow;
+        transition: color 0.3s ease;
+      }
+    }
+  }
+    
     .post-card.large {
       height: 475px;                // tinggi kartu besar
       border-radius: 14px;
@@ -28,6 +46,7 @@
       background-size: cover;
       background-position: center;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: transform 0.4s ease, background-size 0.4s ease;
 
       // gradient overlay di bagian bawah untuk teks
       &::after {
@@ -50,6 +69,7 @@
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
+        transition: color 0.3s ease;
 
         h3 {
           margin: 0;
