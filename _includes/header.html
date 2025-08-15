@@ -11,11 +11,26 @@
     <div class="header-center">
       <nav class="main-nav" id="main-nav">
         <ul class="nav-list">
-          <li><a href="{{ '/' | relative_url }}">Home</a></li>
-          <li><a href="{{ '/category/' | relative_url }}">Category</a></li>
-          <li><a href="{{ '/about/' | relative_url }}">About</a></li>
-          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
-          <li><a href="{{ '/author/' | relative_url }}">Author</a></li>
+          <li>
+            <a href="{{ '/' | relative_url }}" 
+               class="{% if page.url == '/' %}active{% endif %}">Home</a>
+          </li>
+          <li>
+            <a href="{{ '/category/' | relative_url }}" 
+               class="{% if page.url == '/category/' %}active{% endif %}">Category</a>
+          </li>
+          <li>
+            <a href="{{ '/about/' | relative_url }}" 
+               class="{% if page.url == '/about/' %}active{% endif %}">About</a>
+          </li>
+          <li>
+            <a href="{{ '/contact/' | relative_url }}" 
+               class="{% if page.url == '/contact/' %}active{% endif %}">Contact</a>
+          </li>
+          <li>
+            <a href="{{ '/author/' | relative_url }}" 
+               class="{% if page.url == '/author/' %}active{% endif %}">Author</a>
+          </li>
         </ul>
       </nav>
     </div>
