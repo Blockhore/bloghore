@@ -27,12 +27,11 @@
     &:hover {
       .post-card.large {
         transform: scale(1.05);
-        background-size: 110%; // zoom background
         transition: transform 0.4s ease, background-size 0.4s ease;
       }
 
       .overlay h3 {
-        color: yellow;
+        color: #ffb300;
         transition: color 0.3s ease;
       }
     }
