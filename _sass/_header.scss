@@ -32,21 +32,37 @@
   }
 
 .main-nav .nav-list li a {
+  position: relative;
   color: $color-white;
   text-decoration: none;
   font-weight: 500;
-  padding-bottom: 3px; // buat space untuk garis
-  border-bottom: 3px solid transparent;
-  transition: border-color 0.3s;
+  padding-bottom: 3px; // ruang buat garis
 
-  &:hover {
-    color: $color-accent;
-    border-bottom-color: $color-accent; // efek garis pas hover
+  // Garis bawaan (disembunyikan dulu)
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background-color: $color-accent;
+    transition: width 0.3s ease;
   }
 
+  // Hover -> garis geser muncul
+  &:hover::after {
+    width: 100%;
+  }
+
+  // Link aktif -> garis full
+  &.active::after {
+    width: 100%;
+  }
+
+  // Opsional: warna teks pas aktif
   &.active {
-    border-bottom: 3px solid #ffb300; // warna garis aktif
-    color: $color-accent; // opsional, kalau mau teks ikut kuning
+    color: $color-accent;
   }
 }
 
