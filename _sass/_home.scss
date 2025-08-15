@@ -195,10 +195,10 @@
     }
   }
 
-    h2 {
+  h2 {
     font-size: 1.6rem;
     font-weight: 800;
-    color: #111;
+    color: #ffb300;
     margin: 0 0 0.6rem;
   }
 
@@ -295,6 +295,13 @@
     }
   }
 
+    h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffb300;
+    margin: 0 0 0.6rem;
+  }
+
     a {
     display: block; // supaya area klik penuh
     transition: transform 0.4s ease;
@@ -305,8 +312,7 @@
         transition: transform 0.4s ease, background-size 0.4s ease;
       }
 
-      .content h3 
-      .excerpt {
+      .content h3 {
         color: #ffb300;
         transition: color 0.3s ease;
       }
