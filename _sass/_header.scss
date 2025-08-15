@@ -31,21 +31,24 @@
     }
   }
 
-  .main-nav .nav-list {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
+.main-nav .nav-list li a {
+  color: $color-white;
+  text-decoration: none;
+  font-weight: 500;
+  padding-bottom: 3px; // buat space untuk garis
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.3s;
 
-    li a {
-      color: $color-white;
-      text-decoration: none;
-      font-weight: 500;
-
-      &:hover {
-        color: $color-accent;
-      }
-    }
+  &:hover {
+    color: $color-accent;
+    border-bottom-color: $color-accent; // efek garis pas hover
   }
+
+  &.active {
+    border-bottom: 3px solid #ffb300; // warna garis aktif
+    color: $color-accent; // opsional, kalau mau teks ikut kuning
+  }
+}
 
   .submit-btn {
     background-color: $color-accent;
