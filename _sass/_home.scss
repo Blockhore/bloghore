@@ -26,7 +26,7 @@
 
     &:hover {
       .post-card.large {
-        transform: scale(1.05);
+        transform: scale(1.03);
         transition: transform 0.4s ease, background-size 0.4s ease;
       }
 
@@ -91,6 +91,23 @@
 
   /* --------- RIGHT: 4 small cards (2x2) ---------- */
 .popular-side {
+    a {
+    display: block; // supaya area klik penuh
+    transition: transform 0.4s ease;
+
+    &:hover {
+      .post-card.small {
+        transform: scale(1.03);
+        transition: transform 0.4s ease, background-size 0.4s ease;
+      }
+
+      h3 {
+        color: #ffb300;
+        transition: color 0.3s ease;
+      }
+    }
+  }
+  
   .side-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -103,6 +120,7 @@
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.4s ease, background-size 0.4s ease;
 
     img {
       width: 100%;
@@ -117,6 +135,7 @@
       margin: 10px;
       line-height: 1.1;
       color: #111;
+      transition: color 0.3s ease;
     }
 
     .meta {
