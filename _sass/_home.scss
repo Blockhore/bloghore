@@ -207,12 +207,29 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+
+    a {
+    display: block; // supaya area klik penuh
+    transition: transform 0.4s ease;
+
+    &:hover {
+      .post-card {
+        transform: scale(1.03);
+        transition: transform 0.4s ease, background-size 0.4s ease;
+      }
+
+      .content h3 {
+        color: #ffb300;
+        transition: color 0.3s ease;
+      }
+    }
+  }
   
   .post-card {
     border-radius: 8px;
     overflow: hidden;
     background: #fff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.4s ease, background-size 0.4s ease;
 
     img {
       width: 100%;
@@ -230,6 +247,7 @@
         font-weight: 700;
         color: #111;
         line-height: 1.1;
+        transition: color 0.3s ease;
       }
 
       .meta {
