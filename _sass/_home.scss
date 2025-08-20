@@ -12,10 +12,11 @@
 
   // section headings (Most Popular. / Most Read.)
   h2 {
-    font-size: 1.6rem;
-    font-weight: 800;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
     color: #ffb300;
-    margin: 0 0 0.6rem;
   }
 
   /* --------- LEFT: big hero card ---------- */
@@ -53,6 +54,7 @@
         left: 0; right: 0; bottom: 0;
         height: 48%;
         pointer-events: none;
+        background: linear-gradient (to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
       }
 
       // teks (judul + meta) berada di overlay bottom
@@ -259,6 +261,12 @@
 }
 
   // responsif
+  @media (max-width: 1024px) {
+  .latest-articles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
   @media (max-width: 768px) {
     .latest-articles {
       grid-template-columns: 1fr;
