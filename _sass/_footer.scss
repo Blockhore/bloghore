@@ -98,7 +98,7 @@
         height: 40px;
         border-radius: 50%;
         background: rgba($color-text, 0.05);
-        transition: a;; 0.3 ease;
+        transition: all 0.3 ease;
 
         &:hover {
           background: $color-accent;
