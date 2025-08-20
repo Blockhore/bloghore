@@ -1,4 +1,6 @@
 .site-footer {
+  background: linear-gradient(180deg, lighten($color-background, 3%) 0%, $color-background 100%);
+  border-top: 1px solid rgba($color-text, 0.1);
   background-color: $color-background;
   color: $color-text;
   padding: 3rem 0;
@@ -57,6 +59,22 @@
           color: $color-text;
           text-decoration: none;
           transition: color 0.3s ease;
+          position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: $color-accent;
+            transition: width 0.3s ease;
+          }
+
+          &:hover::after {
+            width: 100%;
+          }
 
           &:hover,
           &:focus {
@@ -78,12 +96,20 @@
       }
 
       a {
-        font-size: 1.25rem;
-        color: $color-text;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba($color-text, 0.05);
+        transition: a;; 0.3 ease;
 
         &:hover,
         &:focus {
-          color: $color-accent;
+          background: $color-accent;
+          color: #fff;
+          transform: translateY(-2px);
         }
       }
     }
