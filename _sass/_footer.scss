@@ -75,11 +75,6 @@
           &:hover::after {
             width: 100%;
           }
-
-          &:hover,
-          &:focus {
-            color: $color-accent;
-          }
         }
       }
     }
@@ -105,8 +100,7 @@
         background: rgba($color-text, 0.05);
         transition: a;; 0.3 ease;
 
-        &:hover,
-        &:focus {
+        &:hover {
           background: $color-accent;
           color: #fff;
           transform: translateY(-2px);
