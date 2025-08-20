@@ -16,19 +16,37 @@ if (navToggle && mainNav) {
 }
 
 // === Dark Mode Toggle ===
-const toggleDark = document.getElementById("toggle-dark");
-const htmlEl = document.documentElement;
+(function() {
+  // Add 'dark' or 'light' class to <body> based on saved preference or system preference
+  function setTheme(theme) {
+    document.body.classList.remove('dark', 'light');
+    document.body.classList.add(theme);
+    localStorage.setItem('theme', theme);
+  }
 
-if (toggleDark) {
-  // Inisialisasi
-  const theme = localStorage.getItem("theme");
-  if (theme === "dark") htmlEl.classList.add("dark");
+  // Detect initial theme
+  function getInitialTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) return savedTheme;
+    // Use system preference as fallback
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
 
-  toggleDark.addEventListener("click", () => {
-    htmlEl.classList.toggle("dark");
-    localStorage.setItem("theme", htmlEl.classList.contains("dark") ? "dark" : "light");
+  // Toggle theme
+  function toggleTheme() {
+    const currentTheme = document.body.classList.contains('dark') ? 'dark' : 'light';
+    setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+  }
+
+  // Set initial theme on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    setTheme(getInitialTheme());
+    const btn = document.getElementById('toggle-theme');
+    if (btn) {
+      btn.addEventListener('click', toggleTheme);
+    }
   });
-}
+})();
 
 // === Scroll to Top ===
 const scrollBtn = document.getElementById("scroll-top");
