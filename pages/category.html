@@ -13,7 +13,9 @@ permalink: /category/
     {% for category in sorted_categories %}
       <li class="category-item">
         <a href="{{ '/category/' | append: category[0] | relative_url }}">
-          {{ category[0] | capitalize }}
+          <span class="cat-name">
+            <i class="fa fa-tag"></i> {{ Category[0] | capitalize }}
+          </span>
           <span class="count">({{ category[1].size }})</span>
         </a>
       </li>
