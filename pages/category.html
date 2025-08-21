@@ -8,17 +8,20 @@ permalink: /category/
   <h1>Semua Kategori</h1>
   <p>Temukan artikel berdasarkan kategori yang tersedia di Bloghore.</p>
 
-  <ul class="category-list">
-    {% assign sorted_categories = site.categories | sort %}
-    {% for category in sorted_categories %}
-      <li class="category-item">
-        <a href="{{ '/category/' | append: category[0] | relative_url }}">
-          <span class="cat-name">
-            <i class="fa fa-tag"></i> {{ Category[0] | capitalize }}
-          </span>
-          <span class="count">({{ category[1].size }})</span>
-        </a>
-      </li>
+  <div class="category-list">
+    {% assign categories = site.pages | where: "layout", "category" %}
+    {% for cat in categories %}
+      <a href="{{ '/category/' | append: cat.slug | relative_url }}" class="category-card">
+        {% if cat.image %}
+          <img src="{{ cat.image }}" alt="{{ cat.title }}">
+        {% endif %}
+        <div class="cat-content">
+          <h2>{{ cat.title }}</h2>
+          <p>{{ cat.description }}</p>
+          {% assign count = site.categories[cat.slug] | size %}
+          <span class="count">{{ count }} artikel</span>
+        </div>
+      </a>
     {% endfor %}
-  </ul>
+  </div>
 </section>
