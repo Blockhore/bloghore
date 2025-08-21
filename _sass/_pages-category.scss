@@ -22,16 +22,23 @@
 
   .category-item {
     background-color: $color-border;
+    border: 1px solid rgba($color-white, 0.05);
     padding: 1rem 1.25rem;
     border-radius: $radius-base;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    cursor: pointer;
 
     &:hover {
       background-color: $color-accent;
-      color: $color-black;
+      transform: translateY(-4px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 
       a {
         color: $color-black;
+
+        .count {
+          color: rgba($color-black, 0.7);
+        }
       }
     }
 
@@ -42,6 +49,13 @@
       color: $color-white;
       font-weight: 500;
       text-decoration: none;
+      width: 100%;
+
+      .cat-name {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
 
       .count {
         font-size: 0.875rem;
