@@ -1,26 +1,14 @@
 .about-section {
-  .about-hero {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 3rem 1rem;
-    background: linear-gradient(135deg, $color-accent, lighten($color-accent, 15%));
-    border-radius: $radius-lg;
+  padding-block: $section-spacing;
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: $color-black;
-    }
+  h1, h2 {
+    margin-bottom: 1.5rem;
+  }
 
-    p {
-      font-size: 1.125rem;
-      color: $color-black;
-      opacity: 0.8;
-    }
-
-    @include respond(sm) {
-      padding: 2rem 1rem;
-    }
+  p {
+    max-width: 700px;
+    margin-bottom: 2rem;
+    color: $color-muted;
   }
 
   // Grid tim
@@ -39,39 +27,16 @@
     }
   }
 
-    @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(15px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
   .team-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
     background-color: $color-border;
     padding: 1.5rem;
     border-radius: $radius-base;
     text-align: center;
     transition: transform 0.3s ease;
-    position: relative;
-    animation: fadeUp 0.6s ease both;
-    opacity: 0;
 
     &:hover {
       transform: translateY(-4px);
       box-shadow: $shadow-soft;
-    }
-
-    &:hover img {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba($color-accent, 0.5);
     }
 
     img {
@@ -80,7 +45,6 @@
       object-fit: cover;
       border-radius: 0.5rem;
       margin-bottom: 1rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     h3 {
@@ -88,13 +52,9 @@
     }
 
     .role {
-      display: inline-block;
-      background: $color-accent;
-      color: $color-black;
-      padding: 0.25rem 0.5rem;
-      border-radius: $radius-sm;
-      font-size: 0.75rem;
-      margin-bottom: 1rem;
+      font-size: 0.875rem;
+      color: $color-muted;
+      margin-bottom: 0.75rem;
     }
 
     .team-social {
@@ -114,24 +74,19 @@
   }
 
   // Tombol Join Komunitas
-  .join-section {
-    text-align: center;
-    padding: 3rem 2rem;
-    margin-top: 3rem;
-    background: $color-border;
-    border-radius: $radius-lg;
-  
-    h2 {
-      margin-bottom: 1rem;
-    }
+  .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: $color-accent;
+    color: $color-black;
+    padding: 0.75rem 1.5rem;
+    border-radius: $radius-base;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
 
-    p {
-      color: $color-muted;
-      margin-bottom: 1.5rem;
-    }
-
-    .btn {
-      font-size: 1.125rem;
+    &:hover {
+      background-color: darken($color-accent, 10%);
     }
   }
 }
