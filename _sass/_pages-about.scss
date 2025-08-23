@@ -18,7 +18,7 @@
       opacity: 0.8;
     }
 
-    @include respon(sm) {
+    @include respond(sm) {
       padding: 2rem 1rem;
     }
   }
@@ -36,6 +36,17 @@
 
     @include respond(sm) {
       grid-template-columns: 1fr;
+    }
+  }
+
+    @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
