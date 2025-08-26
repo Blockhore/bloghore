@@ -1,54 +1,71 @@
 .about-section {
   padding-block: $section-spacing;
-
-  h1, h2 {
-    margin-bottom: 1.5rem;
-  }
-
-  p {
-    max-width: 700px;
-    margin-bottom: 2rem;
-    color: $color-muted;
-  }
-
-  // Grid tim
-  .team-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+  
+//hero
+  .about-hero {
+    text-align: center;
     margin-bottom: 3rem;
 
-    @include respond(md) {
-      grid-template-columns: repeat(2, 1fr);
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
     }
 
-    @include respond(sm) {
-      grid-template-columns: 1fr;
+    .tagline {
+      font-size: 1.125rem;
+      line-height: 1.6;
+      max-width: 800px;
+      margin-inline: auto;
+      color: $color-muted;
     }
+  }
+  
+//tim
+  h2 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
   }
 
   .team-card {
-    background-color: $color-border;
-    padding: 1.5rem;
-    border-radius: $radius-base;
+    background: rgba($color-border, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba($color-accent, 0.2);
+    border-radius: $radius-lg;
+    padding: 2rem 1.5rem;
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.35s ease,  box-shadow 0.35s ease;
 
     &:hover {
-      transform: translateY(-4px);
-      box-shadow: $shadow-soft;
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: $shadow-lg;
     }
 
     img {
-      width: 100px;
-      height: 100px;
+      width: 110px;
+      height: 110px;
       object-fit: cover;
-      border-radius: 0.5rem;
+      border-radius: 50%;
+      border: 2px solid $color-accent;
       margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: rotate(2deg) scale(1.05);
+      }
     }
 
     h3 {
-      margin: 0.5rem 0 0.25rem;
+      margin: 0.75rem 0 0.25rem;
+      font-size: 1.125rem;
+      font-weight: 600;
     }
 
     .role {
@@ -63,8 +80,9 @@
       gap: 0.75rem;
 
       a {
-        font-size: 1.125rem;
+        font-size: 1.25rem;
         color: $color-text;
+        transition: color 0.3s ease;
 
         &:hover {
           color: $color-accent;
@@ -73,20 +91,45 @@
     }
   }
 
-  // Tombol Join Komunitas
-  .btn {
-    display: inline-block;
-    margin-top: 1rem;
-    background-color: $color-accent;
-    color: $color-black;
-    padding: 0.75rem 1.5rem;
-    border-radius: $radius-base;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+  //join section
+  .join-section {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    background: linear-gradient(
+      135deg,
+      rgba($color-accent, 0.08),
+      rgba($color-border, 0.3)
+    );
+    border-radius: $radius-lg;
 
-    &:hover {
-      background-color: darken($color-accent, 10%);
+    h2 {
+      margin-bottom: 1rem;
+    }
+
+    p {
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+      color: $color-muted;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background-color: $color-accent;
+      color: $color-black;
+      padding: 0.75rem 1.5rem;
+      border-radius: $radius-base;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+
+      &:hover {
+        background-color: darken($color-accent, 10%);
+        transform: translateY(-2px);
+      }
     }
   }
 }
