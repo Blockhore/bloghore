@@ -38,14 +38,14 @@
     background: rgba($color-border, 0.6);
     backdrop-filter: blur(10px);
     border: 1px solid rgba($color-accent, 0.2);
-    border-radius: $radius-lg;
+    border-radius: $radius-base;
     padding: 2rem 1.5rem;
     text-align: center;
     transition: transform 0.35s ease, box-shadow 0.35s ease;
 
     &:hover {
       transform: translateY(-6px) scale(1.02);
-      box-shadow: $shadow-lg;
+      box-shadow: $shadow-soft;
     }
 
     img {
