@@ -1,35 +1,48 @@
-// _sass/_post.scss
-
 .post-detail {
-  padding: 2rem 0;
+  padding: 3rem 0;
+  max-width: 800px;
+  margin-inline: auto;
 
+  // Gambar header
   .post-header-image {
     margin-bottom: 2rem;
-
     img {
       width: 100%;
-      border-radius: $radius-base;
-      box-shadow: $shadow-soft;
+      border-radius: $radius-lg;
+      box-shadow: $shadow-lg;
     }
   }
 
+  // Header
   .post-header {
     margin-bottom: 2rem;
+    text-align: center;
 
     h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
+      font-size: 2.25rem;
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+      line-height: 1.2;
       color: $color-white;
     }
 
     .post-meta {
-      font-size: 0.875rem;
+      font-size: 0.9rem;
       color: $color-muted;
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+
+      span {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+      }
     }
 
     .post-cats-tags {
-      margin-top: 0.75rem;
-      font-size: 0.875rem;
+      margin-top: 1rem;
+      font-size: 0.9rem;
 
       a {
         color: $color-accent;
@@ -43,25 +56,31 @@
       .tag {
         @include chip;
         margin-right: 0.5rem;
+        background: rgba($color-accent, 0.1);
+        color: $color-accent;
       }
     }
   }
 
+  // Konten post
   .post-content {
-    font-size: 1rem;
-    line-height: $line-height-base;
+    font-size: 1.05rem;
+    line-height: 1.8;
     color: $color-text;
     margin-bottom: 3rem;
 
     h2, h3, h4 {
-      margin-top: 2rem;
+      margin-top: 2.25rem;
       margin-bottom: 1rem;
+      font-weight: 600;
       color: $color-white;
+      scroll-margin-top: 5rem; // buat anchor link nyaman
     }
 
     a {
       color: $color-accent;
       text-decoration: underline;
+      transition: opacity 0.3s ease;
 
       &:hover {
         opacity: 0.8;
@@ -70,61 +89,83 @@
 
     img {
       max-width: 100%;
-      border-radius: $radius-base;
-      margin: 1.5rem 0;
+      border-radius: $radius-lg;
+      margin: 2rem 0;
+      box-shadow: $shadow-soft;
     }
 
     blockquote {
-      margin: 1.5rem 0;
-      padding-left: 1rem;
+      margin: 2rem 0;
+      padding: 1rem 1.5rem;
       border-left: 4px solid $color-accent;
+      background: rgba($color-border, 0.4);
+      border-radius: $radius-base;
+      font-style: italic;
       color: $color-muted;
+      position: relative;
+
+      &::before {
+        content: "“";
+        font-size: 2rem;
+        color: $color-accent;
+        position: absolute;
+        left: 10px;
+        top: -5px;
+      }
+    }
+
+    code {
+      background: rgba($color-border, 0.6);
+      padding: 0.2rem 0.4rem;
+      border-radius: $radius-sm;
+      font-family: $font-mono;
+      font-size: 0.9rem;
+    }
+
+    pre {
+      background: rgba($color-border, 0.8);
+      padding: 1rem;
+      border-radius: $radius-base;
+      overflow-x: auto;
+      code {
+        background: none;
+        padding: 0;
+      }
     }
   }
 
+  // Navigasi antar post
   .post-nav {
     display: flex;
     justify-content: space-between;
     margin: 3rem 0;
-    border-top: 1px solid $color-border;
     padding-top: 2rem;
+    border-top: 1px solid $color-border;
 
     a {
-      color: $color-accent;
+      flex: 1;
+      padding: 1rem;
+      border-radius: $radius-base;
+      background: rgba($color-border, 0.5);
+      transition: background 0.3s ease, transform 0.2s ease;
       font-weight: 500;
+      color: $color-accent;
       text-decoration: none;
 
       &:hover {
-        text-decoration: underline;
+        background: rgba($color-accent, 0.1);
+        transform: translateY(-3px);
       }
     }
-  }
 
-  .related-posts {
-    margin-top: 3rem;
-
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: $color-accent;
+    .prev-post {
+      margin-right: 1rem;
+      text-align: left;
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
-
-      li {
-        margin-bottom: 0.75rem;
-
-        a {
-          color: $color-white;
-          text-decoration: none;
-
-          &:hover {
-            color: $color-accent;
-          }
-        }
-      }
+    .next-post {
+      margin-left: 1rem;
+      text-align: right;
     }
   }
 }
