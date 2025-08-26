@@ -1,7 +1,7 @@
 .about-section {
   padding-block: $section-spacing;
-  
-//hero
+
+  // Hero Section
   .about-hero {
     text-align: center;
     margin-bottom: 3rem;
@@ -20,8 +20,8 @@
       color: $color-muted;
     }
   }
-  
-//tim
+
+  // Tim
   h2 {
     margin-bottom: 1.5rem;
     text-align: center;
@@ -41,7 +41,7 @@
     border-radius: $radius-lg;
     padding: 2rem 1.5rem;
     text-align: center;
-    transition: transform 0.35s ease,  box-shadow 0.35s ease;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
 
     &:hover {
       transform: translateY(-6px) scale(1.02);
@@ -91,7 +91,7 @@
     }
   }
 
-  //join section
+  // Join Section
   .join-section {
     text-align: center;
     padding: 2.5rem 1.5rem;
