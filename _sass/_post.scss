@@ -8,8 +8,8 @@
     margin-bottom: 2rem;
     img {
       width: 100%;
-      border-radius: $radius-lg;
-      box-shadow: $shadow-lg;
+      border-radius: $radius-base;
+      box-shadow: $shadow-soft;
     }
   }
 
@@ -89,7 +89,7 @@
 
     img {
       max-width: 100%;
-      border-radius: $radius-lg;
+      border-radius: $radius-base;
       margin: 2rem 0;
       box-shadow: $shadow-soft;
     }
@@ -117,8 +117,8 @@
     code {
       background: rgba($color-border, 0.6);
       padding: 0.2rem 0.4rem;
-      border-radius: $radius-sm;
-      font-family: $font-mono;
+      border-radius: $radius-base;
+      font-family: $font-main;
       font-size: 0.9rem;
     }
 
