@@ -15,15 +15,15 @@
   }
 
   .post-card {
-    background: $color-surface;
-    border-radius: $radius-lg;
+    background: $color-background;
+    border-radius: $radius-base;
     box-shadow: $shadow-soft;
     overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 
     &:hover {
       transform: translateY(-4px);
-      box-shadow: $shadow-hover;
+      box-shadow: $shadow-soft;
     }
 
     .post-card-link {
