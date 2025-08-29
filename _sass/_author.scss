@@ -1,83 +1,62 @@
-.author-profile {
-  padding-top: $section-spacing;
-  padding-bottom: $section-spacing;
-}
+.author-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: $color-background;
+  border-radius: $radius-base;
+  box-shadow: $shadow-soft;
+  margin-top: 2rem;
 
-.author-info {
-  text-align: center;
-  margin-bottom: 3rem;
+  .author-avatar-wrapper {
+    flex-shrink: 0;
+  }
 
   .author-avatar {
-    width: 120px;
-    height: 120px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 1rem;
-    box-shadow: $shadow-soft;
+    border: 2px solid $color-border;
   }
 
-  h1 {
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .author-bio {
-    color: $color-muted;
-    font-size: 1rem;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .author-social {
-    margin-top: 1.5rem;
+  .author-avatar-placeholder {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: $color-accent;
+    color: $color-white;
+    font-weight: 700;
+    font-size: 1.5rem;
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 1rem;
+  }
 
-    a {
-      font-size: 1rem;
+  .author-meta {
+    .author-name {
+      font-size: 1.2rem;
+      margin-bottom: 0.25rem;
+      color: $color-white;
+    }
+
+    .author-bio {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+      color: $color-text;
+    }
+
+    .author-link {
+      display: inline-block;
+      font-size: 0.85rem;
       color: $color-accent;
       text-decoration: none;
+      font-weight: 500;
 
       &:hover {
         text-decoration: underline;
       }
-    }
-  }
-}
-
-.author-posts {
-  h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .grid-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-  }
-
-  .post-card {
-    background: rgba($color-white, 0.02);
-    padding: 1.5rem;
-    border-radius: $radius-base;
-    box-shadow: $shadow-soft;
-
-    h3 {
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .meta {
-      font-size: 0.875rem;
-      color: $color-muted;
-      margin-bottom: 0.5rem;
-    }
-
-    .tag {
-      @include chip;
-      margin-right: 0.25rem;
     }
   }
 }
