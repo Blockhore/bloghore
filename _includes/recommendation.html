@@ -13,18 +13,27 @@
 {% assign related = related | uniq | slice: 0, 3 %}
 
 {% if related.size > 0 %}
-<section class="recommended-posts">
-  <h2>Rekomendasi untukmu</h2>
+<section class="recommended-posts container">
+  <h2 class="section-title">Rekomendasi untukmu</h2>
   <div class="grid-list">
     {% for post in related %}
       <article class="post-card">
-        <a href="{{ post.url | relative_url }}">
-          <h3>{{ post.title }}</h3>
+        <a href="{{ post.url | relative_url }}" class="post-card-link">
+          {% if post.image %}
+            <div class="thumb">
+              <img src="{{ post.image | relative-url}}" alt="{{ post.title }}">
+            </div>
+          {% else %}
+            <div class="thumb thumb-placeholder">
+              <span>Bloghore</span>
+            </div>
+          {% endif %}
+          <div class="content">
+            <h3>{{ post.title }}</h3>
+            <p class="meta">{% include date.html date=post.date %}</p>
+            <p class="excerpt">{{ post.excerpt | strip_html | truncate: 100 }}</p>
+          </div>
         </a>
-        <p class="meta">
-          {% include date.html date=post.date %}
-        </p>
-        <p>{{ post.excerpt }}</p>
       </article>
     {% endfor %}
   </div>
