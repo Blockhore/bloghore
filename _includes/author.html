@@ -3,17 +3,23 @@
 
 {% if author %}
 <div class="author-box">
-  <div class="author-info">
+  <div class="author-avatar-wrapper">
     {% if author.avatar %}
       <img class="author-avatar" src="{{ author.avatar | relative_url }}" alt="{{ author.name }}">
+    {% else %}
+      <div class="author-avatar placeholder">
+        {{ author.name | slice: 0,1 }}
+      </div>
     {% endif %}
-    <div class="author-meta">
-      <h3>{{ author.name }}</h3>
-      {% if author.bio %}
-        <p>{{ author.bio }}</p>
-      {% endif %}
-      <a href="{{ '/author/' | append: author_id | relative_url }}">Lihat profil →</a>
     </div>
+    <div class="author-meta">
+      <h3 class="author-name">{{ author.name }}</h3>
+      {% if author.bio %}
+        <p class="author-bio">{{ author.bio }}</p>
+      {% endif %}
+      <a href="{{ '/author/' | append: author_id | relative_url }}" class="author-link">
+        Profil Lengkap →
+      </a>
   </div>
 </div>
 {% endif %}
