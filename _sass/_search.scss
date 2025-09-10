@@ -1,15 +1,16 @@
 .search-container {
   position: relative;
-  max-width: 400px;
-  margin-left: auto;
+  flex: 0 0 auto;
+  max-width: none;
+  margin-left: 1rem;
 
   #search-form {
     display: flex;
     align-items: center;
-    background-color: $color-background;
-    border: 1px solid $color-border;
-    border-radius: $radius-base;
-    padding: 0.35rem 0.5rem;
+    background-color: transparent;
+    border: none;
+    border-radius: $radius-base
+    padding: none;
     transition: box-shadow 0.3s ease;
 
     &:focus-within {
@@ -20,13 +21,14 @@
 
   .search-input {
     flex: 1;
-    border: none;
-    background: transparent;
-    color: $color-text;
+    border: 1px solid $color-border;
+    border-radius: $radius-base;
+    background: $color-background;
     font-size: 0.95rem;
-    padding: 0.5rem;
-    outline: none;
-    transition: width 0.3s ease, opacity 0.3s ease;
+    padding: 0.4rem 0.6rem;
+    min-width: 180px;
+    max-width: 250px;
+    transition: width 0.3s ease;
 
     &::placeholder {
       color: $color-muted;
@@ -34,6 +36,8 @@
 
     &.collapsed {
       width: 0;
+      padding: 0;
+      border: none;
       opacity: 0;
       pointer-events: none;
     }
@@ -45,8 +49,10 @@
     color: $color-text;
     font-size: 1.2rem;
     cursor: pointer;
-    padding: 0.4rem;
-    transition: color 0.2s ease;
+    padding: 0.25rem;
+    margin-left: 0.5rem;
+    display: flex;
+    align-items: center;
 
     &:hover {
       color: $color-accent;
