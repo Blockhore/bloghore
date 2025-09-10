@@ -1,43 +1,55 @@
 <div class="modal" id="submit-article-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc" hidden>
   <div class="modal-overlay" tabindex="-1" data-close-modal></div>
+
   <div class="modal-content card">
-    <button class="modal-close" aria-label="Tutup modal" data-close-modal>&times;</button>
-    <h2 id="modal-title">Submit Artikel</h2>
-    <p id="modal-desc">Isi form berikut untuk mengirimkan artikel ke komunitas Bloghore.</p>
-    
-    <form id="submit-article-form" action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse" method="POST" enctype="multipart/form-data" target="_blank" novalidate>
+    <header class="modal-header">
+      <h2 id="modal-title">🚀 Submit Artikel</h2>
+      <button class="modal-close" aria-label="Tutup modal" data-close-modal>
+        <i class="icon-close"></i>
+      </button>
+    </header>
+
+    <div class="modal-body">
+      <p id="modal-desc">Isi form berikut untuk mengirimkan artikel ke komunitas <strong>Bloghore</strong>.</p>
       
-      <label for="name">Nama <span class="required">*</span></label>
-      <input type="text" id="name" name="entry.123456" required aria-describedby="name-help">
-      <small id="name-help" class="help-text">Isi nama lengkap kamu.</small>
-      
-      <label for="email">Email <span class="required">*</span></label>
-      <input type="email" id="email" name="entry.654321" required aria-describedby="email-help">
-      <small id="email-help" class="help-text">Email yang aktif untuk konfirmasi.</small>
-      
-      <label for="file">Upload File (docx/pdf) <span class="required">*</span></label>
-      <input type="file" id="file" name="entry.112233" accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/pdf" required aria-describedby="file-help">
-      <small id="file-help" class="help-text">Format .docx atau .pdf, ukuran maksimal 10MB.</small>
-      
-      <label for="twitter">Twitter (opsional)</label>
-      <input type="text" id="twitter" name="entry.445566" placeholder="@username" aria-describedby="twitter-help">
-      <small id="twitter-help" class="help-text">Username Twitter kamu tanpa tanda @.</small>
-      
-      <label for="instagram">Instagram (opsional)</label>
-      <input type="text" id="instagram" name="entry.778899" placeholder="@username" aria-describedby="instagram-help">
-      <small id="instagram-help" class="help-text">Username Instagram kamu tanpa tanda @.</small>
-      
-      <label for="linkedin">LinkedIn (opsional)</label>
-      <input type="text" id="linkedin" name="entry.334455" placeholder="linkedin.com/in/username" aria-describedby="linkedin-help">
-      <small id="linkedin-help" class="help-text">Link profil LinkedIn kamu.</small>
-      
-      <label for="telegram">Telegram (opsional)</label>
-      <input type="text" id="telegram" name="entry.667788" placeholder="@username" aria-describedby="telegram-help">
-      <small id="telegram-help" class="help-text">Username Telegram kamu tanpa tanda @.</small>
-      
-      <button type="submit" class="btn submit-btn">Kirim</button>
-      
-      <div class="form-message" aria-live="polite" role="alert" hidden></div>
-    </form>
+      <form id="submit-article-form" action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse" method="POST" enctype="multipart/form-data" target="_blank" novalidate>
+        
+        <label for="name">Nama <span class="required">*</span></label>
+        <input type="text" id="name" name="entry.123456" required aria-describedby="name-help">
+        <small id="name-help" class="help-text">Isi nama lengkap kamu.</small>
+
+        <label for="email">Email <span class="required">*</span></label>
+        <input type="email" id="email" name="entry.654321" required aria-describedby="email-help">
+        <small id="email-help" class="help-text">Email aktif untuk konfirmasi.</small>
+
+        <label for="file">Upload File (docx/pdf) <span class="required">*</span></label>
+        <input type="file" id="file" name="entry.112233" accept=".doc,.docx,application/pdf" required aria-describedby="file-help">
+        <small id="file-help" class="help-text">Format .docx atau .pdf, max 10MB.</small>
+
+        <!-- Optional Socials Group -->
+        <fieldset class="social-links">
+          <legend>Sosial Media (opsional)</legend>
+
+          <label for="twitter">Twitter</label>
+          <input type="text" id="twitter" name="entry.445566" placeholder="@username">
+
+          <label for="instagram">Instagram</label>
+          <input type="text" id="instagram" name="entry.778899" placeholder="@username">
+
+          <label for="linkedin">LinkedIn</label>
+          <input type="text" id="linkedin" name="entry.334455" placeholder="linkedin.com/in/username">
+
+          <label for="telegram">Telegram</label>
+          <input type="text" id="telegram" name="entry.667788" placeholder="@username">
+        </fieldset>
+
+        <button type="submit" class="btn submit-btn">
+          <span>Kirim</span>
+          <span class="loader" hidden></span>
+        </button>
+
+        <div class="form-message" aria-live="polite" role="alert" hidden></div>
+      </form>
+    </div>
   </div>
 </div>
