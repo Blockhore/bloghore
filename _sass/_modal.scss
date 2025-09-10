@@ -28,8 +28,8 @@
   &-content {
     position: relative;
     background: $color-background;
-    border-radius: $radius-lg;
-    box-shadow: $shadow-deep;
+    border-radius: $radius-base;
+    box-shadow: $shadow-soft;
     max-width: 540px;
     width: 100%;
     overflow: hidden;
