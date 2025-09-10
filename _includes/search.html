@@ -4,7 +4,7 @@
     <input
       type="search"
       id="search-input"
-      class="search-input collapsed"
+      class="search-input hidden"
       placeholder="Cari Artikel..."
       autocomplete="off"
       aria-expanded="false"
@@ -21,13 +21,13 @@
   const input = document.querySelector("#search-input");
 
   document.querySelector(".search-button").addEventListener("click", () => {
-    input.classList.toggle("collapsed");
-    const expanded = input.classList.contains("collapsed") ? "false" : "true";
+    input.classList.toggle("hidden");
+    const expanded = input.classList.contains("hidden") ? "false" : "true";
     input.setAttribute("aria-expanded", expanded);
 
     toggleBtn.classList.toggle("icon-search");
     toggleBtn.classList.toggle("icon-x");
-    if (!input.classList.contains("collapsed")) {
+    if (!input.classList.contains("hidden")) {
       input.focus();
     }
   }};
