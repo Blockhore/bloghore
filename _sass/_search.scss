@@ -6,9 +6,9 @@
   #search-form {
     display: flex;
     align-items: center;
-    background-color: $color-surface;
+    background-color: $color-background;
     border: 1px solid $color-border;
-    border-radius: $radius-lg;
+    border-radius: $radius-base;
     padding: 0.35rem 0.5rem;
     transition: box-shadow 0.3s ease;
 
@@ -58,7 +58,7 @@
     top: calc(100% + 0.25rem);
     left: 0;
     right: 0;
-    background: $color-surface;
+    background: $color-background;
     border: 1px solid $color-border;
     border-radius: $radius-base;
     max-height: 300px;
