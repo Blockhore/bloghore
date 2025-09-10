@@ -1,16 +1,34 @@
 <div class="search-container">
   <form id="search-form" role="search">
     <label for="search-input" class="visually-hidden">Cari artikel</label>
-    <input 
-      type="search" 
-      id="search-input" 
-      class="search-input hidden" 
-      placeholder="Cari artikel..." 
+    <input
+      type="search"
+      id="search-input"
+      class="search-input collapsed"
+      placeholder="Cari Artikel..."
       autocomplete="off"
-    >
+      aria-expanded="false"
+      >
     <button type="button" class="search-button" aria-label="Cari">
       <i id="search-toggle" class="icon-search"></i>
     </button>
   </form>
   <div id="search-results" class="search-results"></div>
 </div>
+
+<script>
+  const toggleBtn = document.querySelector("#search-toggle");
+  const input = document.querySelector("#search-input");
+
+  document.querySelector(".search-button").addEventListener("click", () => {
+    input.classList.toggle("collapsed");
+    const expanded = input.classList.contains("collapsed") ? "false" : "true";
+    input.setAttribute("aria-expanded", expanded);
+
+    toggleBtn.classList.toggle("icon-search");
+    toggleBtn.classList.toggle("icon-x");
+    if (!input.classList.contains("collapsed")) {
+      input.focus();
+    }
+  }};
+</script>
