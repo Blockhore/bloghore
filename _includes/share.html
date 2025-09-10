@@ -1,23 +1,38 @@
 <section class="post-share">
-  <h4>Bagikan:</h4>
+  <h4>Bagikan</h4>
   <div class="share-icons">
-    <a href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url }}&text={{ page.title }}" target="_blank" aria-label="Share on Twitter">
+    <a href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url }}&text={{ page.title }}"
+      target="_blank" aria-label="Share on Twitter" class="twitter">
       <i class="icon-twitter"></i>
     </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}" target="_blank" aria-label="Share on Facebook">
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}"
+      target="_blank" aria-label="Share on Facebook" class="facebook">
       <i class="icon-facebook"></i>
     </a>
-    <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url }}&title={{ page.title }}" target="_blank" aria-label="Share on LinkedIn">
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url }}&title={{ page.title }}"
+      target="_blank" aria-label="Share on LinkedIn" class="linkedin">
       <i class="icon-linkedin"></i>
     </a>
-    <a href="https://t.me/share/url?url={{ page.url | absolute_url }}&text={{ page.title }}" target="_blank" aria-label="Share on Telegram">
+    <a href="https://t.me/share/url?url={{ page.url | absolute_url }}&text={{ page.title }}"
+      target="_blank" aria-label="Share on Telegram" class="telegram">
       <i class="icon-telegram"></i>
     </a>
-    <a href="https://api.whatsapp.com/send?text={{ page.title }} {{ page.url | absolute_url }}" target="_blank" aria-label="Share on WhatsApp">
+    <a href="https://api.whatsapp.com/send?text={{ page.title }} {{ page.url | absolute_url }}"
+      target="_blank" aria-label="Share on WhatApp" class="whatsapp">
       <i class="icon-whatsapp"></i>
     </a>
-    <button onclick="navigator.clipboard.writeText('{{ page.url | absolute_url }}')" aria-label="Copy link">
+    <button onclick="copyLink()" aria-label="Copy link" class="copy">
       <i class="icon-link"></i>
     </button>
   </div>
+  <small id="copy-feedback" class="copy-feedback">Tautan disalin!</small>
 </section>
+
+<script>
+  function copyLink() {
+    navigator.clipboard.writeText("{{ page.url | absolute_url }}");
+    const feedback = document.getElementById("copy-feedback");
+    feedback.classList.add("show");
+    setTimeout(() => feedback.classList.remove("show"), 2000);
+  }
+</script>
