@@ -69,14 +69,26 @@ if (scrollBtn) {
   const resultsContainer = document.getElementById("search-results");
   const STORAGE_KEY = "bloghore-search-query";
 
-  // Toggle show/hide search form
+  // Toggle show/hide search input and results
   if (searchToggle && searchForm) {
-    searchToggle.addEventListener("click", (e) => {
+    searchToggle.parentElement.addEventListener("click", (e) => {
       e.preventDefault();
-      searchForm.classList.toggle("hidden");
-      
-      if (!searchForm.classList.contains("hidden")) {
+      const isCollapsed = searchInput.classList.toggle("collapsed");
+      searchInput.setAttribute("aria-expanded", !isCollapsed);
+
+      // Toggle icon
+      searchToggle.classList.toggle("icon-search", isCollapsed);
+      searchToggle.classList.toggle("icon-x", !isCollapsed);
+
+      // Show/hide results container
+      resultsContainer.style.display = isCollapsed ? "none" : "block";
+
+      // Focus input if expanded, blur if collapsed
+      if (!isCollapsed) {
         searchInput.focus();
+        // Optionally, re-show previous results
+        const query = searchInput.value.trim();
+        if (query) performSearch(query);
       } else {
         searchInput.blur();
       }
@@ -90,6 +102,7 @@ if (scrollBtn) {
     performSearch(savedQuery);
   }
 
+  // Handle search submit
   searchForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const query = searchInput.value.trim();
@@ -128,9 +141,7 @@ if (scrollBtn) {
     results.forEach(post => {
       const card = document.createElement("article");
       card.className = "post-card";
-
       const titleHTML = highlightQuery(post.title, query);
-
       card.innerHTML = `
         <a href="${post.url}">
           <h3>${titleHTML}</h3>
@@ -145,7 +156,6 @@ if (scrollBtn) {
     });
     resultsContainer.appendChild(fragment);
     resultsContainer.style.display = "block";
-    // Fade in animation
     resultsContainer.style.opacity = 0;
     setTimeout(() => (resultsContainer.style.opacity = 1), 10);
   }
