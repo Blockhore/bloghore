@@ -64,36 +64,38 @@ if (scrollBtn) {
 // search.js
 (() => {
   const searchForm = document.getElementById("search-form");
-  const searchToggle = document.getElementById("search-toggle");
-  const searchInput = document.getElementById("search-input");
+  const searchBtn = searchForm.querySelector(".search-button");
+  const searchToggle = searchForm.querySelector("#search-toggle");
+  const searchInput = searchForm.querySelector("#search-input");
   const resultsContainer = document.getElementById("search-results");
   const STORAGE_KEY = "bloghore-search-query";
 
   // Toggle show/hide search input and results
-  if (searchToggle && searchForm) {
-    searchToggle.parentElement.addEventListener("click", (e) => {
+  if (searchBtn && searchInput) {
+    searchBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      const isCollapsed = searchInput.classList.toggle("collapsed");
-      searchInput.setAttribute("aria-expanded", !isCollapsed);
+      const wasCollapsed = searchInput.classList.contains("collapsed");
+      searchInput.classList.toggle("collapsed");
+      searchInput.setAttribute("aria-expanded", wasCollapsed ? "true" : "false");
 
-      // Toggle icon
-      searchToggle.classList.toggle("icon-search", isCollapsed);
-      searchToggle.classList.toggle("icon-x", !isCollapsed);
+      // Toggle icon classes
+      searchToggle.classList.toggle("icon-search", !wasCollapsed);
+      searchToggle.classList.toggle("icon-x", wasCollapsed);
 
       // Show/hide results container
-      resultsContainer.style.display = isCollapsed ? "none" : "block";
+      resultsContainer.style.display = wasCollapsed ? "block" : "none";
 
-      // Focus input if expanded, blur if collapsed
-      if (!isCollapsed) {
+      // Focus/blur input
+      if (wasCollapsed) {
         searchInput.focus();
-        // Optionally, re-show previous results
-        const query = searchInput.value.trim();
-        if (query) performSearch(query);
+        if (searchInput.value.trim()) performSearch(searchInput.value.trim());
       } else {
         searchInput.blur();
       }
     });
   }
+
+  // ... (keep your search logic below as before)
 
   // Load previous query from localStorage
   const savedQuery = localStorage.getItem(STORAGE_KEY);
@@ -102,7 +104,6 @@ if (scrollBtn) {
     performSearch(savedQuery);
   }
 
-  // Handle search submit
   searchForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const query = searchInput.value.trim();
