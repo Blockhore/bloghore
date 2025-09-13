@@ -44,7 +44,7 @@
         <i class="fas fa-search"></i>
         {% include search.html %}
       </button>
-      <button id="toggle-theme" class="icon-btn" aria-label="Toggle dark mode">
+      <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode">
         <i class="fas fa-moon"></i>
       </button>
       <button class="nav-toggle icon-btn" id="nav-toggle" aria-label="Toggle navigation">
@@ -53,3 +53,36 @@
     </div>
   </div>
 </header>
+
+<script>
+  // Dark/Light Mode Toggle
+
+// Add this to your HTML where you want the toggle button:
+// <button id="theme-toggle">🌙</button>
+
+const toggleButton = document.getElementById('theme-toggle');
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+const currentTheme = localStorage.getItem("theme");
+
+// Apply saved theme preference on page load
+if (currentTheme == "dark") {
+  document.documentElement.classList.add("dark-theme");
+} else if (currentTheme == "light") {
+  document.documentElement.classList.remove("dark-theme");
+} else if (prefersDarkScheme.matches) {
+  document.documentElement.classList.add("dark-theme");
+}
+
+// Toggle button click event
+toggleButton.addEventListener("click", function () {
+  if (document.documentElement.classList.contains("dark-theme")) {
+    document.documentElement.classList.remove("dark-theme");
+    localStorage.setItem("theme", "light");
+    toggleButton.textContent = "🌙";
+  } else {
+    document.documentElement.classList.add("dark-theme");
+    localStorage.setItem("theme", "dark");
+    toggleButton.textContent = "☀️";
+  }
+});
+</script>
