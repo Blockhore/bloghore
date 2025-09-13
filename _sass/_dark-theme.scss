@@ -1,11 +1,35 @@
-// Dark theme overrides for bloghore
+// ===========================
+// Dark Theme Styles - Bloghore
+// ===========================
 
+// === Color Variables ===
+$dark-bg: #181a1b;
+$dark-surface: #202225;
+$dark-border: #23272f;
+$dark-hover: #2a2d34;
+$dark-hover-light: #3a3d44;
+$dark-text: #f5f6fa;
+$dark-muted: #b0b0b0;
+$dark-accent: #80b3ff;
+$dark-accent-hover: #b8daff;
+
+// === Base ===
 body.dark-theme {
-  background: #181a1b;
-  color: #f5f6fa;
+  background: $dark-bg;
+  color: $dark-text;
+
+  // Smooth transition for theme switch
+  &, * {
+    transition: background 0.3s, color 0.3s, border 0.3s;
+  }
+
+  ::selection {
+    background: rgba($dark-accent, 0.35);
+    color: #fff;
+  }
 }
 
-// Typography
+// === Typography ===
 body.dark-theme h1,
 body.dark-theme h2,
 body.dark-theme h3,
@@ -22,157 +46,178 @@ body.dark-theme blockquote {
 }
 
 body.dark-theme a {
-  color: #80b3ff;
-}
-body.dark-theme a:hover,
-body.dark-theme a:focus {
-  color: #b8daff;
+  color: $dark-accent;
+  transition: color 0.2s;
+
+  &:hover,
+  &:focus {
+    color: $dark-accent-hover;
+  }
 }
 
-// Header & Navigation
+// === Header & Navigation ===
 body.dark-theme header,
 body.dark-theme .header {
-  background: #202225;
-  border-bottom: 1px solid #23272f;
+  background: $dark-surface;
+  border-bottom: 1px solid $dark-border;
 }
 
 body.dark-theme nav,
 body.dark-theme .menu {
-  background: #23272f;
+  background: $dark-border;
 }
 
-body.dark-theme .menu a,
-body.dark-theme nav a {
-  color: #e0e6ed;
+body.dark-theme nav a,
+body.dark-theme .menu a {
+  color: $dark-text;
+  transition: color 0.2s, background 0.2s;
+
+  &:hover {
+    background: $dark-hover;
+    color: $dark-accent;
+  }
+
+  &.active {
+    background: $dark-bg;
+    color: $dark-accent;
+  }
 }
 
-body.dark-theme .menu a.active,
-body.dark-theme nav a.active {
-  background: #181a1b;
-  color: #80b3ff;
-}
-
-// Card, Box, Panel
+// === Cards, Panels, Elements ===
 body.dark-theme .card,
 body.dark-theme .box,
 body.dark-theme .panel,
 body.dark-theme .element {
-  background: #202225;
-  color: #e0e0e0;
-  border-color: #23272f;
+  background: $dark-surface;
+  color: $dark-text;
+  border: 1px solid $dark-border;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  }
 }
 
-// Footer
+// === Footer ===
 body.dark-theme footer,
 body.dark-theme .footer {
-  background: #1a1c1e;
-  color: #b0b0b0;
-  border-top: 1px solid #23272f;
+  background: darken($dark-surface, 3%);
+  color: $dark-muted;
+  border-top: 1px solid $dark-border;
 }
 
-// Forms
+// === Forms ===
 body.dark-theme input,
 body.dark-theme textarea,
 body.dark-theme select {
-  background: #22252a;
-  color: #f5f6fa;
-  border: 1px solid #23272f;
-}
+  background: $dark-hover;
+  color: $dark-text;
+  border: 1px solid $dark-border;
 
-body.dark-theme input:focus,
-body.dark-theme textarea:focus,
-body.dark-theme select:focus {
-  border-color: #80b3ff;
-  box-shadow: 0 0 0 2px #80b3ff33;
+  &:focus {
+    border-color: $dark-accent;
+    box-shadow: 0 0 0 3px rgba($dark-accent, 0.35);
+  }
 }
 
 body.dark-theme button,
 body.dark-theme .button {
-  background: #2a2d34;
-  color: #f5f6fa;
-  border: 1px solid #444;
-}
-body.dark-theme button:hover,
-body.dark-theme .button:hover {
-  background: #3a3d44;
-  color: #fff;
+  background: $dark-hover;
+  color: $dark-text;
+  border: 1px solid $dark-border;
+  transition: background 0.2s, transform 0.1s;
+
+  &:hover {
+    background: $dark-hover-light;
+    color: #fff;
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
 }
 
-// Code blocks
-body.dark-theme pre,
+// === Code Blocks ===
 body.dark-theme code {
-  background: #151718;
-  color: #a9dc76;
-  border: 1px solid #23272f;
+  background: #1e1f21;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  color: #f8f8f2;
 }
 
 body.dark-theme pre {
-  box-shadow: 0 1px 4px #000a;
+  background: #151718;
+  border: 1px solid $dark-border;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
 }
 
-// Tables
-body.dark-theme table {
-  background: #23272f;
-  color: #e0e0e0;
+body.dark-theme pre code {
+  background: transparent;
+  padding: 0;
 }
+
+// === Tables ===
+body.dark-theme table {
+  background: $dark-border;
+  color: $dark-text;
+}
+
 body.dark-theme th,
 body.dark-theme td {
-  border-color: #2a2d34;
-}
-body.dark-theme tr:nth-child(even) {
-  background: #1a1d21;
+  border-color: $dark-hover;
 }
 
-// Modal, Overlay, Popups
+body.dark-theme tr:nth-child(even) {
+  background: darken($dark-bg, 2%);
+}
+
+// === Modal, Overlay, Popup ===
 body.dark-theme .modal,
 body.dark-theme .overlay,
 body.dark-theme .popup {
-  background: #23272f;
-  color: #e0e0e0;
-  border-color: #444;
+  background: $dark-border;
+  color: $dark-text;
+  border-color: $dark-hover;
 }
 
-// Pagination
+// === Pagination ===
 body.dark-theme .pagination {
-  background: #23272f;
+  background: $dark-border;
 }
+
 body.dark-theme .pagination a,
 body.dark-theme .pagination span {
-  color: #f5f6fa;
-  background: #202225;
-  border-color: #444;
-}
-body.dark-theme .pagination a.active,
-body.dark-theme .pagination span.active {
-  background: #181a1b;
-  color: #80b3ff;
+  color: $dark-text;
+  background: $dark-surface;
+  border: 1px solid $dark-hover;
+
+  &.active {
+    background: $dark-bg;
+    color: $dark-accent;
+  }
 }
 
-// Shadows, Borders, Misc
+// === Misc ===
 body.dark-theme .shadow {
-  box-shadow: 0 2px 8px #000a;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
+
 body.dark-theme hr {
-  border-color: #23272f;
+  border-color: $dark-border;
 }
 
-body.dark-theme ::selection {
-  background: #80b3ff55;
-  color: #fff;
-}
-
-// Images (optional: slightly dim images in dark mode)
 body.dark-theme img {
   filter: brightness(0.95) contrast(1.05);
 }
 
-// Scrollbar
+// === Scrollbar ===
 body.dark-theme ::-webkit-scrollbar {
-  background: #22252a;
-}
-body.dark-theme ::-webkit-scrollbar-thumb {
-  background: #444;
-  border-radius: 2px;
+  background: $dark-hover;
 }
 
-// Add more overrides as needed for your custom components...
+body.dark-theme ::-webkit-scrollbar-thumb {
+  background: $dark-border;
+  border-radius: 8px;
+}
