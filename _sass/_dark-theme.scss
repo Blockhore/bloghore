@@ -1,22 +1,22 @@
 // ===========================
-// Dark Theme Styles - Bloghore
+// Light Theme Styles - Bloghore
 // ===========================
 
 // === Color Variables ===
-$dark-bg: #181a1b;
-$dark-surface: #202225;
-$dark-border: #23272f;
-$dark-hover: #2a2d34;
-$dark-hover-light: #3a3d44;
-$dark-text: #f5f6fa;
-$dark-muted: #b0b0b0;
-$dark-accent: #80b3ff;
-$dark-accent-hover: #b8daff;
+$light-bg: #f9fafc;
+$light-surface: #ffffff;
+$light-border: #e2e8f0;
+$light-hover: #f1f5f9;
+$light-hover-dark: #e5e9f0;
+$light-text: #1a1a1a;
+$light-muted: #666;
+$light-accent: #0066ff;
+$light-accent-hover: #3385ff;
 
 // === Base ===
-body.dark-theme {
-  background: $dark-bg;
-  color: $dark-text;
+body.light-theme {
+  background: $light-bg;
+  color: $light-text;
 
   // Smooth transition for theme switch
   &, * {
@@ -24,114 +24,114 @@ body.dark-theme {
   }
 
   ::selection {
-    background: rgba($dark-accent, 0.35);
-    color: #fff;
+    background: rgba($light-accent, 0.2);
+    color: #000;
   }
 }
 
 // === Typography ===
-body.dark-theme h1,
-body.dark-theme h2,
-body.dark-theme h3,
-body.dark-theme h4,
-body.dark-theme h5,
-body.dark-theme h6 {
-  color: #fff;
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme h3,
+body.light-theme h4,
+body.light-theme h5,
+body.light-theme h6 {
+  color: $light-text;
 }
 
-body.dark-theme p,
-body.dark-theme li,
-body.dark-theme blockquote {
-  color: #e0e0e0;
+body.light-theme p,
+body.light-theme li,
+body.light-theme blockquote {
+  color: darken($light-text, 5%);
 }
 
-body.dark-theme a {
-  color: $dark-accent;
+body.light-theme a {
+  color: $light-accent;
   transition: color 0.2s;
 
   &:hover,
   &:focus {
-    color: $dark-accent-hover;
+    color: $light-accent-hover;
   }
 }
 
 // === Header & Navigation ===
-body.dark-theme header,
-body.dark-theme .header {
-  background: $dark-surface;
-  border-bottom: 1px solid $dark-border;
+body.light-theme header,
+body.light-theme .header {
+  background: $light-surface;
+  border-bottom: 1px solid $light-border;
 }
 
-body.dark-theme nav,
-body.dark-theme .menu {
-  background: $dark-border;
+body.light-theme nav,
+body.light-theme .menu {
+  background: $light-surface;
 }
 
-body.dark-theme nav a,
-body.dark-theme .menu a {
-  color: $dark-text;
+body.light-theme nav a,
+body.light-theme .menu a {
+  color: $light-text;
   transition: color 0.2s, background 0.2s;
 
   &:hover {
-    background: $dark-hover;
-    color: $dark-accent;
+    background: $light-hover;
+    color: $light-accent;
   }
 
   &.active {
-    background: $dark-bg;
-    color: $dark-accent;
+    background: $light-hover-dark;
+    color: $light-accent;
   }
 }
 
 // === Cards, Panels, Elements ===
-body.dark-theme .card,
-body.dark-theme .box,
-body.dark-theme .panel,
-body.dark-theme .element {
-  background: $dark-surface;
-  color: $dark-text;
-  border: 1px solid $dark-border;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+body.light-theme .card,
+body.light-theme .box,
+body.light-theme .panel,
+body.light-theme .element {
+  background: $light-surface;
+  color: $light-text;
+  border: 1px solid $light-border;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   transition: transform 0.2s, box-shadow 0.2s;
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
   }
 }
 
 // === Footer ===
-body.dark-theme footer,
-body.dark-theme .footer {
-  background: darken($dark-surface, 3%);
-  color: $dark-muted;
-  border-top: 1px solid $dark-border;
+body.light-theme footer,
+body.light-theme .footer {
+  background: $light-hover;
+  color: $light-muted;
+  border-top: 1px solid $light-border;
 }
 
 // === Forms ===
-body.dark-theme input,
-body.dark-theme textarea,
-body.dark-theme select {
-  background: $dark-hover;
-  color: $dark-text;
-  border: 1px solid $dark-border;
+body.light-theme input,
+body.light-theme textarea,
+body.light-theme select {
+  background: $light-surface;
+  color: $light-text;
+  border: 1px solid $light-border;
 
   &:focus {
-    border-color: $dark-accent;
-    box-shadow: 0 0 0 3px rgba($dark-accent, 0.35);
+    border-color: $light-accent;
+    box-shadow: 0 0 0 3px rgba($light-accent, 0.25);
   }
 }
 
-body.dark-theme button,
-body.dark-theme .button {
-  background: $dark-hover;
-  color: $dark-text;
-  border: 1px solid $dark-border;
+body.light-theme button,
+body.light-theme .button {
+  background: $light-hover;
+  color: $light-text;
+  border: 1px solid $light-border;
   transition: background 0.2s, transform 0.1s;
 
   &:hover {
-    background: $dark-hover-light;
-    color: #fff;
+    background: $light-hover-dark;
+    color: $light-accent;
   }
 
   &:active {
@@ -140,84 +140,84 @@ body.dark-theme .button {
 }
 
 // === Code Blocks ===
-body.dark-theme code {
-  background: #1e1f21;
+body.light-theme code {
+  background: #f1f5f9;
   padding: 0.2em 0.4em;
   border-radius: 4px;
-  color: #f8f8f2;
+  color: #e83e8c;
 }
 
-body.dark-theme pre {
-  background: #151718;
-  border: 1px solid $dark-border;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+body.light-theme pre {
+  background: #f6f8fa;
+  border: 1px solid $light-border;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-body.dark-theme pre code {
+body.light-theme pre code {
   background: transparent;
   padding: 0;
 }
 
 // === Tables ===
-body.dark-theme table {
-  background: $dark-border;
-  color: $dark-text;
+body.light-theme table {
+  background: $light-surface;
+  color: $light-text;
 }
 
-body.dark-theme th,
-body.dark-theme td {
-  border-color: $dark-hover;
+body.light-theme th,
+body.light-theme td {
+  border-color: $light-border;
 }
 
-body.dark-theme tr:nth-child(even) {
-  background: darken($dark-bg, 2%);
+body.light-theme tr:nth-child(even) {
+  background: $light-hover;
 }
 
 // === Modal, Overlay, Popup ===
-body.dark-theme .modal,
-body.dark-theme .overlay,
-body.dark-theme .popup {
-  background: $dark-border;
-  color: $dark-text;
-  border-color: $dark-hover;
+body.light-theme .modal,
+body.light-theme .overlay,
+body.light-theme .popup {
+  background: $light-surface;
+  color: $light-text;
+  border-color: $light-border;
 }
 
 // === Pagination ===
-body.dark-theme .pagination {
-  background: $dark-border;
+body.light-theme .pagination {
+  background: $light-surface;
 }
 
-body.dark-theme .pagination a,
-body.dark-theme .pagination span {
-  color: $dark-text;
-  background: $dark-surface;
-  border: 1px solid $dark-hover;
+body.light-theme .pagination a,
+body.light-theme .pagination span {
+  color: $light-text;
+  background: $light-hover;
+  border: 1px solid $light-border;
 
   &.active {
-    background: $dark-bg;
-    color: $dark-accent;
+    background: $light-accent;
+    color: #fff;
   }
 }
 
 // === Misc ===
-body.dark-theme .shadow {
-  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+body.light-theme .shadow {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
-body.dark-theme hr {
-  border-color: $dark-border;
+body.light-theme hr {
+  border-color: $light-border;
 }
 
-body.dark-theme img {
-  filter: brightness(0.95) contrast(1.05);
+body.light-theme img {
+  filter: brightness(1) contrast(1);
 }
 
 // === Scrollbar ===
-body.dark-theme ::-webkit-scrollbar {
-  background: $dark-hover;
+body.light-theme ::-webkit-scrollbar {
+  background: $light-hover;
 }
 
-body.dark-theme ::-webkit-scrollbar-thumb {
-  background: $dark-border;
+body.light-theme ::-webkit-scrollbar-thumb {
+  background: $light-border;
   border-radius: 8px;
 }
