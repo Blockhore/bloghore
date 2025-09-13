@@ -59,34 +59,39 @@
 
 // Add this to your HTML where you want the toggle button:
 // <button id="theme-toggle">🌙</button>
+  
+  // === Dark/Light Mode Toggle ===
+  const toggleButton = document.getElementById("theme-toggle");
+  const body = document.body;
+  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+  const currentTheme = localStorage.getItem("theme");
 
-const toggleButton = document.getElementById('theme-toggle');
-const body = document.body;
-const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-const currentTheme = localStorage.getItem("theme");
-
-// Apply saved or preferred theme on page load
-if (currentTheme === "dark") {
-  body.classList.add("dark-theme");
-  toggleButton.textContent = "☀️";
-} else if (currentTheme === "light") {
-  body.classList.remove("dark-theme");
-  toggleButton.textContent = "🌙";
-} else if (prefersDarkScheme.matches) {
-  body.classList.add("dark-theme");
-  toggleButton.textContent = "☀️";
-}
-
-// Toggle theme on button click
-toggleButton.addEventListener("click", function () {
-  if (body.classList.contains("dark-theme")) {
-    body.classList.remove("dark-theme");
-    localStorage.setItem("theme", "light");
-    toggleButton.textContent = "🌙";
-  } else {
-    body.classList.add("dark-theme");
-    localStorage.setItem("theme", "dark");
-    toggleButton.textContent = "☀️";
+  // Helper to set theme
+  function setTheme(theme) {
+    if (theme === "dark") {
+      body.classList.add("dark-theme");
+      body.classList.remove("light-theme");
+      toggleButton.textContent = "☀️";
+      toggleButton.setAttribute("aria-label", "Switch to light mode");
+    } else {
+      body.classList.add("light-theme");
+      body.classList.remove("dark-theme");
+      toggleButton.textContent = "🌙";
+      toggleButton.setAttribute("aria-label", "Switch to dark mode");
+    }
   }
-});
+
+  // Apply saved or preferred theme on page load
+  if (currentTheme) {
+    setTheme(currentTheme);
+  } else {
+    setTheme(prefersDarkScheme.matches ? "dark" : "light");
+  }
+
+  // Toggle theme on button click
+  toggleButton.addEventListener("click", () => {
+    const newTheme = body.classList.contains("dark-theme") ? "light" : "dark";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+  });
 </script>
