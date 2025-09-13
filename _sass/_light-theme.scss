@@ -1,223 +1,146 @@
-// ===========================
-// Light Theme Styles - Bloghore
-// ===========================
+// Light theme overrides for Bloghore
 
-// === Color Variables ===
-$light-bg: #f9fafc;
-$light-surface: #ffffff;
-$light-border: #e2e8f0;
-$light-hover: #f1f5f9;
-$light-hover-dark: #e5e9f0;
-$light-text: #1a1a1a;
-$light-muted: #666;
-$light-accent: #0066ff;
-$light-accent-hover: #3385ff;
-
-// === Base ===
-body.light-theme {
-  background: $light-bg;
-  color: $light-text;
-
-  // Smooth transition for theme switch
-  &, * {
-    transition: background 0.3s, color 0.3s, border 0.3s;
-  }
-
-  ::selection {
-    background: rgba($light-accent, 0.2);
-    color: #000;
-  }
+body {
+  background: #fdfdfd;
+  color: #222; // teks utama lebih gelap, kontras
 }
 
-// === Typography ===
-body.light-theme h1,
-body.light-theme h2,
-body.light-theme h3,
-body.light-theme h4,
-body.light-theme h5,
-body.light-theme h6 {
-  color: $light-text;
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  color: #111;
+}
+p, li, blockquote {
+  color: #333;
+}
+a {
+  color: #0056b3;
+  transition: color 0.2s ease;
+}
+a:hover,
+a:focus {
+  color: #003f88;
 }
 
-body.light-theme p,
-body.light-theme li,
-body.light-theme blockquote {
-  color: darken($light-text, 5%);
+// Header & Navigation
+header,
+.header {
+  background: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+}
+nav,
+.menu {
+  background: #fafafa;
+}
+.menu a,
+nav a {
+  color: #333;
+}
+.menu a.active,
+nav a.active {
+  background: #e6f0ff;
+  color: #0056b3;
 }
 
-body.light-theme a {
-  color: $light-accent;
-  transition: color 0.2s;
-
-  &:hover,
-  &:focus {
-    color: $light-accent-hover;
-  }
+// Card, Box, Panel
+.card,
+.box,
+.panel,
+.element {
+  background: #fff;
+  color: #333;
+  border: 1px solid #e6e6e6;
 }
 
-// === Header & Navigation ===
-body.light-theme header,
-body.light-theme .header {
-  background: $light-surface;
-  border-bottom: 1px solid $light-border;
+// Footer
+footer,
+.footer {
+  background: #f8f9fa;
+  color: #555;
+  border-top: 1px solid #e6e6e6;
 }
 
-body.light-theme nav,
-body.light-theme .menu {
-  background: $light-surface;
+// Forms
+input,
+textarea,
+select {
+  background: #fff;
+  color: #222;
+  border: 1px solid #ccc;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 0 2px #0056b333;
+}
+button,
+.button {
+  background: #0056b3;
+  color: #fff;
+  border: none;
+}
+button:hover,
+.button:hover {
+  background: #00408a;
 }
 
-body.light-theme nav a,
-body.light-theme .menu a {
-  color: $light-text;
-  transition: color 0.2s, background 0.2s;
-
-  &:hover {
-    background: $light-hover;
-    color: $light-accent;
-  }
-
-  &.active {
-    background: $light-hover-dark;
-    color: $light-accent;
-  }
+// Code blocks
+pre,
+code {
+  background: #f5f7fa;
+  color: #d63384; // sedikit kontras
+  border: 1px solid #e6e6e6;
+}
+pre {
+  box-shadow: 0 1px 4px #0001;
 }
 
-// === Cards, Panels, Elements ===
-body.light-theme .card,
-body.light-theme .box,
-body.light-theme .panel,
-body.light-theme .element {
-  background: $light-surface;
-  color: $light-text;
-  border: 1px solid $light-border;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  transition: transform 0.2s, box-shadow 0.2s;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-  }
+// Tables
+table {
+  background: #fff;
+  color: #222;
+}
+th,
+td {
+  border-color: #e6e6e6;
+}
+tr:nth-child(even) {
+  background: #f9f9f9;
 }
 
-// === Footer ===
-body.light-theme footer,
-body.light-theme .footer {
-  background: $light-hover;
-  color: $light-muted;
-  border-top: 1px solid $light-border;
+// Modal, Overlay, Popups
+.modal,
+.overlay,
+.popup {
+  background: #fff;
+  color: #222;
+  border-color: #ccc;
 }
 
-// === Forms ===
-body.light-theme input,
-body.light-theme textarea,
-body.light-theme select {
-  background: $light-surface;
-  color: $light-text;
-  border: 1px solid $light-border;
-
-  &:focus {
-    border-color: $light-accent;
-    box-shadow: 0 0 0 3px rgba($light-accent, 0.25);
-  }
+// Pagination
+.pagination {
+  background: #fff;
+}
+.pagination a,
+.pagination span {
+  color: #333;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+}
+.pagination a.active,
+.pagination span.active {
+  background: #0056b3;
+  color: #fff;
 }
 
-body.light-theme button,
-body.light-theme .button {
-  background: $light-hover;
-  color: $light-text;
-  border: 1px solid $light-border;
-  transition: background 0.2s, transform 0.1s;
-
-  &:hover {
-    background: $light-hover-dark;
-    color: $light-accent;
-  }
-
-  &:active {
-    transform: scale(0.97);
-  }
+// Misc
+.shadow {
+  box-shadow: 0 2px 8px #0002;
 }
-
-// === Code Blocks ===
-body.light-theme code {
-  background: #f1f5f9;
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
-  color: #e83e8c;
+hr {
+  border-color: #eee;
 }
-
-body.light-theme pre {
-  background: #f6f8fa;
-  border: 1px solid $light-border;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-body.light-theme pre code {
-  background: transparent;
-  padding: 0;
-}
-
-// === Tables ===
-body.light-theme table {
-  background: $light-surface;
-  color: $light-text;
-}
-
-body.light-theme th,
-body.light-theme td {
-  border-color: $light-border;
-}
-
-body.light-theme tr:nth-child(even) {
-  background: $light-hover;
-}
-
-// === Modal, Overlay, Popup ===
-body.light-theme .modal,
-body.light-theme .overlay,
-body.light-theme .popup {
-  background: $light-surface;
-  color: $light-text;
-  border-color: $light-border;
-}
-
-// === Pagination ===
-body.light-theme .pagination {
-  background: $light-surface;
-}
-
-body.light-theme .pagination a,
-body.light-theme .pagination span {
-  color: $light-text;
-  background: $light-hover;
-  border: 1px solid $light-border;
-
-  &.active {
-    background: $light-accent;
-    color: #fff;
-  }
-}
-
-// === Misc ===
-body.light-theme .shadow {
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
-
-body.light-theme hr {
-  border-color: $light-border;
-}
-
-body.light-theme img {
-  filter: brightness(1) contrast(1);
-}
-
-// === Scrollbar ===
-body.light-theme ::-webkit-scrollbar {
-  background: $light-hover;
-}
-
-body.light-theme ::-webkit-scrollbar-thumb {
-  background: $light-border;
-  border-radius: 8px;
+::selection {
+  background: #0056b355;
+  color: #fff;
 }
