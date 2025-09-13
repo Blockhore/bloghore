@@ -1,0 +1,48 @@
+/* Default (light) theme */
+body {
+  background: #fff;
+  color: #222;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Dark theme */
+body.dark-theme {
+  background: #181a1b;
+  color: #f5f6fa;
+}
+
+/* Example: Links */
+body.dark-theme a {
+  color: #80b3ff;
+}
+
+/* Example: Headings */
+body.dark-theme h1, 
+body.dark-theme h2, 
+body.dark-theme h3, 
+body.dark-theme h4, 
+body.dark-theme h5, 
+body.dark-theme h6 {
+  color: #f5f6fa;
+}
+
+/* Example: Code blocks */
+body.dark-theme pre, 
+body.dark-theme code {
+  background: #222;
+  color: #a9dc76;
+}
+
+/* Example: Inputs and buttons */
+body.dark-theme input,
+body.dark-theme textarea,
+body.dark-theme select {
+  background: #222;
+  color: #f5f6fa;
+  border-color: #333;
+}
+body.dark-theme button {
+  background: #282c34;
+  color: #f5f6fa;
+  border-color: #333;
+}
