@@ -61,26 +61,30 @@
 // <button id="theme-toggle">🌙</button>
 
 const toggleButton = document.getElementById('theme-toggle');
+const body = document.body;
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 const currentTheme = localStorage.getItem("theme");
 
-// Apply saved theme preference on page load
-if (currentTheme == "dark") {
-  document.documentElement.classList.add("dark-theme");
-} else if (currentTheme == "light") {
-  document.documentElement.classList.remove("dark-theme");
+// Apply saved or preferred theme on page load
+if (currentTheme === "dark") {
+  body.classList.add("dark-theme");
+  toggleButton.textContent = "☀️";
+} else if (currentTheme === "light") {
+  body.classList.remove("dark-theme");
+  toggleButton.textContent = "🌙";
 } else if (prefersDarkScheme.matches) {
-  document.documentElement.classList.add("dark-theme");
+  body.classList.add("dark-theme");
+  toggleButton.textContent = "☀️";
 }
 
-// Toggle button click event
+// Toggle theme on button click
 toggleButton.addEventListener("click", function () {
-  if (document.documentElement.classList.contains("dark-theme")) {
-    document.documentElement.classList.remove("dark-theme");
+  if (body.classList.contains("dark-theme")) {
+    body.classList.remove("dark-theme");
     localStorage.setItem("theme", "light");
     toggleButton.textContent = "🌙";
   } else {
-    document.documentElement.classList.add("dark-theme");
+    body.classList.add("dark-theme");
     localStorage.setItem("theme", "dark");
     toggleButton.textContent = "☀️";
   }
